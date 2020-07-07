@@ -1,0 +1,216 @@
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\QuanLyKho.exe.config
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\QuanLyKho.exe
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\QuanLyKho.pdb
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.csprojAssemblyReference.cache
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Properties.Resources.resources
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.csproj.GenerateResource.cache
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.csproj.CoreCompileInputs.cache
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.exe
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.pdb
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\MaterialDesign.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\MaterialDesignColors.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\MaterialDesignColors.pdb
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.csproj.CopyComplete
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.form_Main.resources
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.form_UserInfor.resources
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.form_UserManager.resources
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Data.Desktop.v20.1.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Data.v20.1.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Utils.v20.1.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraBars.v20.1.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraEditors.v20.1.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Printing.v20.1.Core.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Sparkline.v20.1.Core.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Pdf.v20.1.Core.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Pdf.v20.1.Drawing.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Data.Desktop.v20.1.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Data.v20.1.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Utils.v20.1.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraBars.v20.1.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraEditors.v20.1.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Printing.v20.1.Core.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Sparkline.v20.1.Core.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Pdf.v20.1.Core.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Pdf.v20.1.Drawing.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.Data.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.Data.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.Data.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.Data.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.Utils.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.Utils.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.Utils.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.Utils.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.XtraBars.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.XtraBars.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.XtraBars.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.XtraBars.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.XtraEditors.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.XtraEditors.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.XtraEditors.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.XtraEditors.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.Printing.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.Printing.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.Printing.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.Printing.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.Sparkline.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.Sparkline.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.Sparkline.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.Sparkline.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.Pdf.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.Pdf.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.form_Login.resources
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.exe.licenses
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\Bunifu_UI_v1.5.3.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Images.v20.1.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraGrid.v20.1.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraLayout.v20.1.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraPrinting.v20.1.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.RichEdit.v20.1.Core.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraTreeList.v20.1.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Office.v20.1.Core.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraGrid.v20.1.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraLayout.v20.1.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraPrinting.v20.1.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.RichEdit.v20.1.Core.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraTreeList.v20.1.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Office.v20.1.Core.xml
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.XtraGrid.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.XtraGrid.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.XtraGrid.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.XtraGrid.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.XtraLayout.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.XtraLayout.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.XtraLayout.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.XtraLayout.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.XtraPrinting.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.XtraPrinting.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.XtraPrinting.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.XtraPrinting.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.RichEdit.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.RichEdit.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.RichEdit.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.RichEdit.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.XtraTreeList.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.XtraTreeList.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.XtraTreeList.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.XtraTreeList.v20.1.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.Office.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.Office.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.Office.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuc tap chuyen mon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.Office.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\Database1.mdf
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\Database1_log.ldf
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\QuanLyKho.exe.config
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\QuanLyKho.exe
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\QuanLyKho.pdb
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\Bunifu_UI_v1.5.3.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Data.Desktop.v20.1.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Data.v20.1.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Images.v20.1.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Printing.v20.1.Core.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Utils.v20.1.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraBars.v20.1.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraEditors.v20.1.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraGrid.v20.1.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\MaterialDesign.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\MaterialDesignColors.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Pdf.v20.1.Core.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Pdf.v20.1.Drawing.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Sparkline.v20.1.Core.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraLayout.v20.1.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraPrinting.v20.1.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.RichEdit.v20.1.Core.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraTreeList.v20.1.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Office.v20.1.Core.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Data.Desktop.v20.1.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Data.v20.1.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Printing.v20.1.Core.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Utils.v20.1.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraBars.v20.1.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraEditors.v20.1.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraGrid.v20.1.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\MaterialDesignColors.pdb
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Pdf.v20.1.Core.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Pdf.v20.1.Drawing.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Sparkline.v20.1.Core.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraLayout.v20.1.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraPrinting.v20.1.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.RichEdit.v20.1.Core.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.XtraTreeList.v20.1.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\DevExpress.Office.v20.1.Core.xml
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.Data.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.Data.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.Data.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.Data.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.Printing.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.Printing.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.Printing.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.Printing.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.Utils.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.Utils.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.Utils.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.Utils.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.XtraBars.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.XtraBars.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.XtraBars.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.XtraBars.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.XtraEditors.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.XtraEditors.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.XtraEditors.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.XtraEditors.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.XtraGrid.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.XtraGrid.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.XtraGrid.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.XtraGrid.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.Pdf.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.Pdf.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.Pdf.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.Pdf.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.Sparkline.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.Sparkline.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.Sparkline.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.Sparkline.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.XtraLayout.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.XtraLayout.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.XtraLayout.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.XtraLayout.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.XtraPrinting.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.XtraPrinting.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.XtraPrinting.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.XtraPrinting.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.RichEdit.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.RichEdit.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.RichEdit.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.RichEdit.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.XtraTreeList.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.XtraTreeList.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.XtraTreeList.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.XtraTreeList.v20.1.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\de\DevExpress.Office.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\es\DevExpress.Office.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ja\DevExpress.Office.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\bin\Debug\ru\DevExpress.Office.v20.1.Core.resources.dll
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.csprojAssemblyReference.cache
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.form_Login.resources
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Form_Main.resources
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.form_UserInfor.resources
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.form_UserManager.resources
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Properties.Resources.resources
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.csproj.GenerateResource.cache
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.exe.licenses
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.csproj.CoreCompileInputs.cache
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.csproj.CopyComplete
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.exe
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.pdb
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Form_Enterprise.resources
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Form_ChangePass.resources
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Form_SupplierInfor.resources
+D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Form_CustomerInfor.resources
