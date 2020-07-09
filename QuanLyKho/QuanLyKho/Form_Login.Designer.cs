@@ -57,12 +57,14 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lb_notificationPass = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel_mail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel_changepass.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_mail
@@ -77,12 +79,11 @@
             this.panel_mail.Controls.Add(this.txt_usermail);
             this.panel_mail.Controls.Add(this.pictureBox1);
             this.panel_mail.Controls.Add(this.lb_notificationmail);
-            this.panel_mail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_mail.GradientBottomLeft = System.Drawing.Color.White;
             this.panel_mail.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.panel_mail.GradientTopLeft = System.Drawing.Color.White;
             this.panel_mail.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(22)))), ((int)(((byte)(132)))));
-            this.panel_mail.Location = new System.Drawing.Point(0, 0);
+            this.panel_mail.Location = new System.Drawing.Point(500, 0);
             this.panel_mail.Name = "panel_mail";
             this.panel_mail.Quality = 10;
             this.panel_mail.Size = new System.Drawing.Size(300, 450);
@@ -256,12 +257,11 @@
             this.panel_login.Controls.Add(this.txt_user);
             this.panel_login.Controls.Add(this.pictureBox2);
             this.panel_login.Controls.Add(this.lb_notification);
-            this.panel_login.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_login.GradientBottomLeft = System.Drawing.Color.White;
             this.panel_login.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.panel_login.GradientTopLeft = System.Drawing.Color.White;
             this.panel_login.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(22)))), ((int)(((byte)(132)))));
-            this.panel_login.Location = new System.Drawing.Point(0, 0);
+            this.panel_login.Location = new System.Drawing.Point(500, 0);
             this.panel_login.Name = "panel_login";
             this.panel_login.Quality = 10;
             this.panel_login.Size = new System.Drawing.Size(300, 450);
@@ -448,12 +448,11 @@
             this.panel_changepass.Controls.Add(this.txt_xacnhan);
             this.panel_changepass.Controls.Add(this.pictureBox3);
             this.panel_changepass.Controls.Add(this.lb_notificationPass);
-            this.panel_changepass.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_changepass.GradientBottomLeft = System.Drawing.Color.White;
             this.panel_changepass.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.panel_changepass.GradientTopLeft = System.Drawing.Color.White;
             this.panel_changepass.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(22)))), ((int)(((byte)(132)))));
-            this.panel_changepass.Location = new System.Drawing.Point(0, 0);
+            this.panel_changepass.Location = new System.Drawing.Point(500, 0);
             this.panel_changepass.Name = "panel_changepass";
             this.panel_changepass.Quality = 10;
             this.panel_changepass.Size = new System.Drawing.Size(300, 450);
@@ -625,12 +624,23 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btn_login_Click);
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox4.Image = global::QuanLyKho.Properties.Resources.warehouse;
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(500, 450);
+            this.pictureBox4.TabIndex = 12;
+            this.pictureBox4.TabStop = false;
+            // 
             // Form_Login
             // 
             this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 450);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.panel_login);
             this.Controls.Add(this.panel_mail);
             this.Controls.Add(this.panel_changepass);
@@ -649,6 +659,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel_changepass.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -683,5 +694,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label lb_notificationPass;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

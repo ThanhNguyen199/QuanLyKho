@@ -63,7 +63,7 @@ namespace QuanLyKho
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            txt_id.Text = "";
+            txt_id.Text = "CT";
             txt_taxcode.Text = "";
             txt_buyer.Text = "";
             txt_legalname.Text = "";

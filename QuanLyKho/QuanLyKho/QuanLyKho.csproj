@@ -105,6 +105,12 @@
     <Compile Include="Form_Enterprise.Designer.cs">
       <DependentUpon>Form_Enterprise.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_InputProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_InputProduct.Designer.cs">
+      <DependentUpon>Form_InputProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,12 @@
     </Compile>
     <Compile Include="Form_Main.Designer.cs">
       <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ProductInfor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ProductInfor.Designer.cs">
+      <DependentUpon>Form_ProductInfor.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_SupplierInfor.cs">
       <SubType>Form</SubType>
@@ -146,11 +158,17 @@
     <EmbeddedResource Include="Form_Enterprise.resx">
       <DependentUpon>Form_Enterprise.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_InputProduct.resx">
+      <DependentUpon>Form_InputProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Main.resx">
       <DependentUpon>Form_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ProductInfor.resx">
+      <DependentUpon>Form_ProductInfor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_SupplierInfor.resx">
       <DependentUpon>Form_SupplierInfor.cs</DependentUpon>
@@ -209,6 +227,7 @@
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
     <None Include="Resources\Logo.jpg" />
+    <None Include="Resources\warehouse.jpg" />
     <Content Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />

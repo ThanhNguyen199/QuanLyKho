@@ -66,6 +66,7 @@ namespace QuanLyKho
         #region QuanLyKho
         private void button2_Click(object sender, EventArgs e)
         {
+            openNewForm(new Form_InputProduct());
             hideSubMenu();
         }
 
@@ -125,6 +126,7 @@ namespace QuanLyKho
 
         private void button13_Click(object sender, EventArgs e)
         {
+            openNewForm(new Form_ProductInfor());
             hideSubMenu();
         }
         #endregion

@@ -18,7 +18,7 @@ namespace QuanLyKho
         }
         private DataProvider() { }
 
-        private string connectionSTR = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Nam_3_2\Thuctapchuyenmon\Project\QuanLyKho\QuanLyKho\Database1.mdf;Integrated Security=True";
+        private string connectionSTR = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\Database1.mdf;Integrated Security=True";
 
         public DataTable ExcuteQuery(string query, object[] a = null)
         {
