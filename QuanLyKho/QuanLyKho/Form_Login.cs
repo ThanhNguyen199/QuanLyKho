@@ -46,7 +46,7 @@ namespace QuanLyKho
             try
             {
                 MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("tvfahasa@gmail.com");
+                mail.From = new MailAddress("congtythanhnguyen199@gmail.com");
                 mail.To.Add(toMail);
                 mail.Subject = "Công ty TNHH Thanh Nguyễn";
                 mail.Body = bodyemail;

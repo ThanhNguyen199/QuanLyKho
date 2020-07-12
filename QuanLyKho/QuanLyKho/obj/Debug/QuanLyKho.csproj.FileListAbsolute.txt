@@ -326,3 +326,6 @@ D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.cs
 D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.csproj.CopyComplete
 D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.exe
 D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.pdb
+D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Form_InputProduct.resources
+D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Form_DeliveryBillProduct.resources
+D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Form_ListInput.resources

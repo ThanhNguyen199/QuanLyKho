@@ -44,6 +44,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.lb_notification);
             this.groupBox1.Controls.Add(this.btn_cancel);
             this.groupBox1.Controls.Add(this.btn_save);
@@ -68,7 +69,7 @@
             // 
             this.lb_notification.AutoSize = true;
             this.lb_notification.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(22)))), ((int)(((byte)(132)))));
-            this.lb_notification.Location = new System.Drawing.Point(41, 125);
+            this.lb_notification.Location = new System.Drawing.Point(41, 122);
             this.lb_notification.Name = "lb_notification";
             this.lb_notification.Size = new System.Drawing.Size(122, 19);
             this.lb_notification.TabIndex = 8;
@@ -76,7 +77,9 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(147, 146);
+            this.btn_cancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_cancel.Location = new System.Drawing.Point(147, 143);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(75, 25);
             this.btn_cancel.TabIndex = 7;
@@ -86,7 +89,9 @@
             // 
             // btn_save
             // 
-            this.btn_save.Location = new System.Drawing.Point(66, 146);
+            this.btn_save.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_save.Location = new System.Drawing.Point(66, 143);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 25);
             this.btn_save.TabIndex = 6;
@@ -96,7 +101,7 @@
             // 
             // txt_newpass2
             // 
-            this.txt_newpass2.Location = new System.Drawing.Point(135, 96);
+            this.txt_newpass2.Location = new System.Drawing.Point(135, 92);
             this.txt_newpass2.Name = "txt_newpass2";
             this.txt_newpass2.Size = new System.Drawing.Size(155, 26);
             this.txt_newpass2.TabIndex = 5;
@@ -105,7 +110,7 @@
             // 
             // txt_newpass1
             // 
-            this.txt_newpass1.Location = new System.Drawing.Point(135, 65);
+            this.txt_newpass1.Location = new System.Drawing.Point(135, 61);
             this.txt_newpass1.Name = "txt_newpass1";
             this.txt_newpass1.Size = new System.Drawing.Size(155, 26);
             this.txt_newpass1.TabIndex = 4;
@@ -114,7 +119,7 @@
             // 
             // txt_pass
             // 
-            this.txt_pass.Location = new System.Drawing.Point(135, 34);
+            this.txt_pass.Location = new System.Drawing.Point(135, 30);
             this.txt_pass.Name = "txt_pass";
             this.txt_pass.Size = new System.Drawing.Size(155, 26);
             this.txt_pass.TabIndex = 3;
@@ -124,7 +129,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 99);
+            this.label3.Location = new System.Drawing.Point(7, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 19);
             this.label3.TabIndex = 2;
@@ -133,7 +138,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 68);
+            this.label2.Location = new System.Drawing.Point(33, 64);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 19);
             this.label2.TabIndex = 1;
@@ -142,7 +147,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 37);
+            this.label1.Location = new System.Drawing.Point(41, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 19);
             this.label1.TabIndex = 0;

@@ -113,8 +113,8 @@
             this.btn_back.Location = new System.Drawing.Point(160, 385);
             this.btn_back.Name = "btn_back";
             this.btn_back.Normalcolor = System.Drawing.Color.Transparent;
-            this.btn_back.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btn_back.OnHoverTextColor = System.Drawing.Color.Transparent;
+            this.btn_back.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_back.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_back.selected = false;
             this.btn_back.Size = new System.Drawing.Size(100, 48);
             this.btn_back.TabIndex = 8;
@@ -148,8 +148,8 @@
             this.btn_continue.Location = new System.Drawing.Point(31, 385);
             this.btn_continue.Name = "btn_continue";
             this.btn_continue.Normalcolor = System.Drawing.Color.Transparent;
-            this.btn_continue.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btn_continue.OnHoverTextColor = System.Drawing.Color.Transparent;
+            this.btn_continue.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_continue.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_continue.selected = false;
             this.btn_continue.Size = new System.Drawing.Size(109, 48);
             this.btn_continue.TabIndex = 7;
@@ -304,8 +304,8 @@
             this.btn_cancel.Location = new System.Drawing.Point(160, 380);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Normalcolor = System.Drawing.Color.Transparent;
-            this.btn_cancel.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btn_cancel.OnHoverTextColor = System.Drawing.Color.Transparent;
+            this.btn_cancel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_cancel.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_cancel.selected = false;
             this.btn_cancel.Size = new System.Drawing.Size(100, 48);
             this.btn_cancel.TabIndex = 8;
@@ -339,8 +339,8 @@
             this.btn_login.Location = new System.Drawing.Point(40, 380);
             this.btn_login.Name = "btn_login";
             this.btn_login.Normalcolor = System.Drawing.Color.Transparent;
-            this.btn_login.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btn_login.OnHoverTextColor = System.Drawing.Color.Transparent;
+            this.btn_login.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_login.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_login.selected = false;
             this.btn_login.Size = new System.Drawing.Size(100, 48);
             this.btn_login.TabIndex = 7;
@@ -538,8 +538,8 @@
             this.btn_change.Location = new System.Drawing.Point(31, 385);
             this.btn_change.Name = "btn_change";
             this.btn_change.Normalcolor = System.Drawing.Color.Transparent;
-            this.btn_change.OnHovercolor = System.Drawing.Color.Transparent;
-            this.btn_change.OnHoverTextColor = System.Drawing.Color.Transparent;
+            this.btn_change.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_change.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_change.selected = false;
             this.btn_change.Size = new System.Drawing.Size(109, 48);
             this.btn_change.TabIndex = 7;
@@ -641,10 +641,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel_login);
             this.Controls.Add(this.panel_mail);
             this.Controls.Add(this.panel_changepass);
-            this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Login";

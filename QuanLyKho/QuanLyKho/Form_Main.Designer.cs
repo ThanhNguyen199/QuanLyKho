@@ -143,7 +143,7 @@
             this.bunifuFlatButton6.Name = "bunifuFlatButton6";
             this.bunifuFlatButton6.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton6.OnHovercolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton6.OnHoverTextColor = System.Drawing.Color.OrangeRed;
+            this.bunifuFlatButton6.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.bunifuFlatButton6.selected = false;
             this.bunifuFlatButton6.Size = new System.Drawing.Size(200, 48);
             this.bunifuFlatButton6.TabIndex = 12;
@@ -180,7 +180,7 @@
             this.bunifuFlatButton4.Name = "bunifuFlatButton4";
             this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.OrangeRed;
+            this.bunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.bunifuFlatButton4.selected = false;
             this.bunifuFlatButton4.Size = new System.Drawing.Size(200, 48);
             this.bunifuFlatButton4.TabIndex = 11;
@@ -281,7 +281,7 @@
             this.bunifuFlatButton3.Name = "bunifuFlatButton3";
             this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.OrangeRed;
+            this.bunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.bunifuFlatButton3.selected = false;
             this.bunifuFlatButton3.Size = new System.Drawing.Size(200, 48);
             this.bunifuFlatButton3.TabIndex = 7;
@@ -316,7 +316,7 @@
             this.button5.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.button5.Size = new System.Drawing.Size(200, 30);
             this.button5.TabIndex = 2;
-            this.button5.Text = "Báo cáo doanh thu";
+            this.button5.Text = "Doanh thu";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -333,7 +333,7 @@
             this.button6.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.button6.Size = new System.Drawing.Size(200, 30);
             this.button6.TabIndex = 1;
-            this.button6.Text = "Báo cáo xuất kho";
+            this.button6.Text = "Xuất kho";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -350,7 +350,7 @@
             this.button7.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.button7.Size = new System.Drawing.Size(200, 30);
             this.button7.TabIndex = 0;
-            this.button7.Text = "Báo cáo nhập kho";
+            this.button7.Text = "Nhập kho";
             this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -382,7 +382,7 @@
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.OrangeRed;
+            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.bunifuFlatButton2.selected = false;
             this.bunifuFlatButton2.Size = new System.Drawing.Size(200, 48);
             this.bunifuFlatButton2.TabIndex = 4;
@@ -498,7 +498,7 @@
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.OrangeRed;
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.bunifuFlatButton1.selected = false;
             this.bunifuFlatButton1.Size = new System.Drawing.Size(200, 48);
             this.bunifuFlatButton1.TabIndex = 0;

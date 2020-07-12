@@ -99,6 +99,12 @@
     <Compile Include="Form_CustomerInfor.Designer.cs">
       <DependentUpon>Form_CustomerInfor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_DeliveryBillProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_DeliveryBillProduct.Designer.cs">
+      <DependentUpon>Form_DeliveryBillProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Enterprise.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,12 @@
     </Compile>
     <Compile Include="Form_InputProduct.Designer.cs">
       <DependentUpon>Form_InputProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ListInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ListInput.Designer.cs">
+      <DependentUpon>Form_ListInput.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
@@ -155,11 +167,17 @@
     <EmbeddedResource Include="Form_CustomerInfor.resx">
       <DependentUpon>Form_CustomerInfor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_DeliveryBillProduct.resx">
+      <DependentUpon>Form_DeliveryBillProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Enterprise.resx">
       <DependentUpon>Form_Enterprise.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_InputProduct.resx">
       <DependentUpon>Form_InputProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ListInput.resx">
+      <DependentUpon>Form_ListInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>

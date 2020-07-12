@@ -47,12 +47,6 @@
             this.btn_save = new System.Windows.Forms.Button();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.dgv_data = new System.Windows.Forms.DataGridView();
-            this.btn_cancel = new System.Windows.Forms.Button();
-            this.txt_qr = new System.Windows.Forms.TextBox();
-            this.btn_choose = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbb_loai = new System.Windows.Forms.ComboBox();
-            this.cbb_unit = new System.Windows.Forms.ComboBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +55,12 @@
             this.qr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.from = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.txt_qr = new System.Windows.Forms.TextBox();
+            this.btn_choose = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cbb_loai = new System.Windows.Forms.ComboBox();
+            this.cbb_unit = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -107,6 +107,8 @@
             // 
             this.btn_change.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_change.BackColor = System.Drawing.Color.Transparent;
+            this.btn_change.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_change.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_change.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_change.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_change.Location = new System.Drawing.Point(234, 287);
@@ -204,6 +206,8 @@
             // btn_close
             // 
             this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_close.Location = new System.Drawing.Point(638, 30);
             this.btn_close.Name = "btn_close";
@@ -217,6 +221,8 @@
             // 
             this.btn_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_add.BackColor = System.Drawing.Color.Transparent;
+            this.btn_add.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.Location = new System.Drawing.Point(114, 287);
@@ -231,6 +237,8 @@
             // 
             this.btn_save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_save.BackColor = System.Drawing.Color.Transparent;
+            this.btn_save.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.Location = new System.Drawing.Point(354, 287);
@@ -271,69 +279,6 @@
             this.dgv_data.Size = new System.Drawing.Size(700, 200);
             this.dgv_data.TabIndex = 111;
             this.dgv_data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_data_CellClick);
-            // 
-            // btn_cancel
-            // 
-            this.btn_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
-            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel.Location = new System.Drawing.Point(474, 287);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(80, 30);
-            this.btn_cancel.TabIndex = 110;
-            this.btn_cancel.Text = "Huỷ";
-            this.btn_cancel.UseVisualStyleBackColor = false;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
-            // 
-            // txt_qr
-            // 
-            this.txt_qr.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_qr.Location = new System.Drawing.Point(325, 167);
-            this.txt_qr.Name = "txt_qr";
-            this.txt_qr.Size = new System.Drawing.Size(139, 26);
-            this.txt_qr.TabIndex = 103;
-            // 
-            // btn_choose
-            // 
-            this.btn_choose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_choose.BackColor = System.Drawing.Color.Transparent;
-            this.btn_choose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_choose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_choose.Location = new System.Drawing.Point(596, 287);
-            this.btn_choose.Name = "btn_choose";
-            this.btn_choose.Size = new System.Drawing.Size(80, 30);
-            this.btn_choose.TabIndex = 122;
-            this.btn_choose.Text = "Chọn ảnh";
-            this.btn_choose.UseVisualStyleBackColor = false;
-            this.btn_choose.Click += new System.EventHandler(this.btn_choose_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(496, 86);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 180);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 121;
-            this.pictureBox1.TabStop = false;
-            // 
-            // cbb_loai
-            // 
-            this.cbb_loai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_loai.FormattingEnabled = true;
-            this.cbb_loai.Location = new System.Drawing.Point(114, 167);
-            this.cbb_loai.Name = "cbb_loai";
-            this.cbb_loai.Size = new System.Drawing.Size(131, 27);
-            this.cbb_loai.TabIndex = 123;
-            // 
-            // cbb_unit
-            // 
-            this.cbb_unit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_unit.FormattingEnabled = true;
-            this.cbb_unit.Location = new System.Drawing.Point(325, 86);
-            this.cbb_unit.Name = "cbb_unit";
-            this.cbb_unit.Size = new System.Drawing.Size(139, 27);
-            this.cbb_unit.TabIndex = 124;
             // 
             // id
             // 
@@ -390,6 +335,73 @@
             this.from.HeaderText = "Xuất xứ";
             this.from.Name = "from";
             this.from.ReadOnly = true;
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.Location = new System.Drawing.Point(474, 287);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(80, 30);
+            this.btn_cancel.TabIndex = 110;
+            this.btn_cancel.Text = "Huỷ";
+            this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            // 
+            // txt_qr
+            // 
+            this.txt_qr.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_qr.Location = new System.Drawing.Point(325, 167);
+            this.txt_qr.Name = "txt_qr";
+            this.txt_qr.Size = new System.Drawing.Size(139, 26);
+            this.txt_qr.TabIndex = 103;
+            // 
+            // btn_choose
+            // 
+            this.btn_choose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_choose.BackColor = System.Drawing.Color.Transparent;
+            this.btn_choose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_choose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_choose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_choose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_choose.Location = new System.Drawing.Point(596, 287);
+            this.btn_choose.Name = "btn_choose";
+            this.btn_choose.Size = new System.Drawing.Size(80, 30);
+            this.btn_choose.TabIndex = 122;
+            this.btn_choose.Text = "Chọn ảnh";
+            this.btn_choose.UseVisualStyleBackColor = false;
+            this.btn_choose.Click += new System.EventHandler(this.btn_choose_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(496, 86);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(180, 180);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 121;
+            this.pictureBox1.TabStop = false;
+            // 
+            // cbb_loai
+            // 
+            this.cbb_loai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_loai.FormattingEnabled = true;
+            this.cbb_loai.Location = new System.Drawing.Point(114, 167);
+            this.cbb_loai.Name = "cbb_loai";
+            this.cbb_loai.Size = new System.Drawing.Size(131, 27);
+            this.cbb_loai.TabIndex = 123;
+            // 
+            // cbb_unit
+            // 
+            this.cbb_unit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_unit.FormattingEnabled = true;
+            this.cbb_unit.Location = new System.Drawing.Point(325, 86);
+            this.cbb_unit.Name = "cbb_unit";
+            this.cbb_unit.Size = new System.Drawing.Size(139, 27);
+            this.cbb_unit.TabIndex = 124;
             // 
             // Form_ProductInfor
             // 
