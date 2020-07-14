@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,7 +18,21 @@ namespace QuanLyKho
         {
             InitializeComponent();
         }
-
+        #region function
+        private bool isEmail(string inputEmail)
+        {
+            inputEmail = inputEmail ?? string.Empty;
+            string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputEmail))
+                return (true);
+            else
+                return (false);
+        }
+        #endregion
+        #region load
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -26,7 +41,6 @@ namespace QuanLyKho
         private void form_UserManager_Load(object sender, EventArgs e)
         {
             txt_username.Text = "";
-            cbb_quyen.Text = null;
             txt_name.Text = "";
             txt_cmnd.Text = "";
             txt_male.Text = "";
@@ -61,6 +75,7 @@ namespace QuanLyKho
             cbb_quyen.DataSource = DataProvider.Instance.ExcuteQuery("select * from UserRole");
             cbb_quyen.DisplayMember = "Description";
             cbb_quyen.ValueMember = "Id";
+            cbb_quyen.Text = "";
 
             dgv_data.AutoGenerateColumns = false;
             dgv_data.Enabled = true;
@@ -70,15 +85,15 @@ namespace QuanLyKho
         private void dgv_data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgv_data.CurrentRow.Index;
-            txt_username.Text = dgv_data.Rows[i].Cells[0].Value.ToString();
-            cbb_quyen.Text = dgv_data.Rows[i].Cells[1].Value.ToString();
-            txt_name.Text = dgv_data.Rows[i].Cells[2].Value.ToString();
-            txt_cmnd.Text = dgv_data.Rows[i].Cells[3].Value.ToString();
-            txt_male.Text = dgv_data.Rows[i].Cells[4].Value.ToString();
-            dateTimePicker1.Text = dgv_data.Rows[i].Cells[5].Value.ToString();
-            txt_phone.Text = dgv_data.Rows[i].Cells[6].Value.ToString();
-            txt_email.Text = dgv_data.Rows[i].Cells[7].Value.ToString();
-            txt_address.Text = dgv_data.Rows[i].Cells[8].Value.ToString();
+            txt_username.Text = dgv_data.Rows[i].Cells[1].Value.ToString();
+            cbb_quyen.Text = dgv_data.Rows[i].Cells[2].Value.ToString();
+            txt_name.Text = dgv_data.Rows[i].Cells[3].Value.ToString();
+            txt_cmnd.Text = dgv_data.Rows[i].Cells[4].Value.ToString();
+            txt_male.Text = dgv_data.Rows[i].Cells[5].Value.ToString();
+            dateTimePicker1.Text = dgv_data.Rows[i].Cells[6].Value.ToString();
+            txt_phone.Text = dgv_data.Rows[i].Cells[7].Value.ToString();
+            txt_email.Text = dgv_data.Rows[i].Cells[8].Value.ToString();
+            txt_address.Text = dgv_data.Rows[i].Cells[9].Value.ToString();
 
             string query = "select * from Users where UserName = N'" + txt_username.Text + "'";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
@@ -120,60 +135,17 @@ namespace QuanLyKho
         {
             form_UserManager_Load(sender, e);
         }
-
+        #endregion
         private void btn_save_Click(object sender, EventArgs e)
         {
             if ( txt_username.Text != "" && txt_name.Text != "" && txt_cmnd.Text != "" && txt_male.Text != "" && txt_email.Text != "")
             {
-                if (chon == 1)
+                if (isEmail(txt_email.Text))
                 {
-                    string query = "select IdRole from Users where UserName = N'" + Form_Login.userlogin + "'";
-                    if (DataProvider.Instance.ExcuteScalar(query).ToString() == "ADMIN")
+                    if (chon == 1)
                     {
-                        string user = txt_username.Text.Trim().ToLower();
-                        string name = txt_name.Text;
-                        string cmnd = txt_cmnd.Text;
-                        string male = txt_male.Text;
-                        string role = cbb_quyen.SelectedValue.ToString();
-                        DateTime dayofbirth = dateTimePicker1.Value;
-                        string phone = txt_phone.Text;
-                        string email = txt_email.Text;
-                        string address = txt_address.Text;
-                        string pass = "c4ca4238a0b923820dcc509a6f75849b";
-                        byte[] imageData = null;
-
-                        query = "exec user_insert @username , @password , @IdRole , @DisplayName , " +
-                                "@CMND , @Male , @DateOfBirth , @Phone , @Email , @Address , @Image ";
-                        if (chonanh == 1)
-                        {
-                            using (FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read))
-                            {
-                                imageData = new Byte[fs.Length];
-                                fs.Read(imageData, 0, Convert.ToInt32(fs.Length));
-                                if (DataProvider.Instance.ExcuteNunQuery(query,
-                                new object[] { user, pass, role, name, cmnd, male, dayofbirth, phone, email, address, imageData }) > 0)
-                                {
-                                    MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK);
-                                    form_UserManager_Load(sender, e);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Thêm thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Hãy chọn ảnh cho nhanh viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else
-                    {
-                        if (cbb_quyen.Text == "Admin")
-                        {
-                            MessageBox.Show("Không được phép cấp quyền admin!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else 
+                        string query = "select IdRole from Users where UserName = N'" + Form_Login.userlogin + "'";
+                        if (DataProvider.Instance.ExcuteScalar(query).ToString() == "ADMIN")
                         {
                             string user = txt_username.Text.Trim().ToLower();
                             string name = txt_name.Text;
@@ -188,7 +160,7 @@ namespace QuanLyKho
                             byte[] imageData = null;
 
                             query = "exec user_insert @username , @password , @IdRole , @DisplayName , " +
-                                "@CMND , @Male , @DateOfBirth , @Phone , @Email , @Address , @Image ";
+                                    "@CMND , @Male , @DateOfBirth , @Phone , @Email , @Address , @Image ";
                             if (chonanh == 1)
                             {
                                 using (FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read))
@@ -212,67 +184,57 @@ namespace QuanLyKho
                                 MessageBox.Show("Hãy chọn ảnh cho nhanh viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                    }
-                }
-                else if (chon == 2)
-                {
-                    string query = "select IdRole from Users where UserName = N'" + Form_Login.userlogin + "'";
-                    if (DataProvider.Instance.ExcuteScalar(query).ToString() == "ADMIN")
-                    {
-                        string user = txt_username.Text.Trim().ToLower();
-                        string name = txt_name.Text;
-                        string cmnd = txt_cmnd.Text;
-                        string male = txt_male.Text;
-                        string role = cbb_quyen.SelectedValue.ToString();
-                        DateTime dayofbirth = dateTimePicker1.Value;
-                        string phone = txt_phone.Text;
-                        string email = txt_email.Text;
-                        string address = txt_address.Text;
-                        byte[] imageData = null;
+                        else
+                        {
+                            if (cbb_quyen.Text == "Admin")
+                            {
+                                MessageBox.Show("Không được phép cấp quyền admin!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                string user = txt_username.Text.Trim().ToLower();
+                                string name = txt_name.Text;
+                                string cmnd = txt_cmnd.Text;
+                                string male = txt_male.Text;
+                                string role = cbb_quyen.SelectedValue.ToString();
+                                DateTime dayofbirth = dateTimePicker1.Value;
+                                string phone = txt_phone.Text;
+                                string email = txt_email.Text;
+                                string address = txt_address.Text;
+                                string pass = "c4ca4238a0b923820dcc509a6f75849b";
+                                byte[] imageData = null;
 
-                        if (chonanh == 1)
-                        {
-                            using (FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read))
-                            {
-                                imageData = new Byte[fs.Length];
-                                fs.Read(imageData, 0, Convert.ToInt32(fs.Length));
-                            }
-                            query = "exec user_update @username  , @IdRole , @DisplayName , " +
-                            "@CMND , @Male , @DateOfBirth , @Phone , @Email , @Address , @Image ";
-                            if (DataProvider.Instance.ExcuteNunQuery(query,
-                            new object[] { user, role, name, cmnd, male, dayofbirth, phone, email, address, imageData }) > 0)
-                            {
-                                MessageBox.Show("Thay đổi thành công!", "Thông báo", MessageBoxButtons.OK);
-                                form_UserManager_Load(sender, e);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Thay đổi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                        else
-                        {
-                            query = "exec user_updatenoimage @username  , @IdRole , @DisplayName , " +
-                            "@CMND , @Male , @DateOfBirth , @Phone , @Email , @Address ";
-                            if (DataProvider.Instance.ExcuteNunQuery(query,
-                            new object[] { user, role, name, cmnd, male, dayofbirth, phone, email, address }) > 0)
-                            {
-                                MessageBox.Show("Thay đổi thành công!", "Thông báo", MessageBoxButtons.OK);
-                                form_UserManager_Load(sender, e);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Thay đổi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                query = "exec user_insert @username , @password , @IdRole , @DisplayName , " +
+                                    "@CMND , @Male , @DateOfBirth , @Phone , @Email , @Address , @Image ";
+                                if (chonanh == 1)
+                                {
+                                    using (FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read))
+                                    {
+                                        imageData = new Byte[fs.Length];
+                                        fs.Read(imageData, 0, Convert.ToInt32(fs.Length));
+                                        if (DataProvider.Instance.ExcuteNunQuery(query,
+                                        new object[] { user, pass, role, name, cmnd, male, dayofbirth, phone, email, address, imageData }) > 0)
+                                        {
+                                            MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK);
+                                            form_UserManager_Load(sender, e);
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Thêm thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Hãy chọn ảnh cho nhanh viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                }
                             }
                         }
                     }
-                    else
+                    else if (chon == 2)
                     {
-                        if (cbb_quyen.Text == "Admin")
-                        {
-                            MessageBox.Show("Không được phép cấp quyền admin!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else
+                        string query = "select IdRole from Users where UserName = N'" + Form_Login.userlogin + "'";
+                        if (DataProvider.Instance.ExcuteScalar(query).ToString() == "ADMIN")
                         {
                             string user = txt_username.Text.Trim().ToLower();
                             string name = txt_name.Text;
@@ -321,9 +283,69 @@ namespace QuanLyKho
                                 }
                             }
                         }
+                        else
+                        {
+                            if (cbb_quyen.Text == "Admin")
+                            {
+                                MessageBox.Show("Không được phép cấp quyền admin!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                string user = txt_username.Text.Trim().ToLower();
+                                string name = txt_name.Text;
+                                string cmnd = txt_cmnd.Text;
+                                string male = txt_male.Text;
+                                string role = cbb_quyen.SelectedValue.ToString();
+                                DateTime dayofbirth = dateTimePicker1.Value;
+                                string phone = txt_phone.Text;
+                                string email = txt_email.Text;
+                                string address = txt_address.Text;
+                                byte[] imageData = null;
+
+                                if (chonanh == 1)
+                                {
+                                    using (FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read))
+                                    {
+                                        imageData = new Byte[fs.Length];
+                                        fs.Read(imageData, 0, Convert.ToInt32(fs.Length));
+                                    }
+                                    query = "exec user_update @username  , @IdRole , @DisplayName , " +
+                                    "@CMND , @Male , @DateOfBirth , @Phone , @Email , @Address , @Image ";
+                                    if (DataProvider.Instance.ExcuteNunQuery(query,
+                                    new object[] { user, role, name, cmnd, male, dayofbirth, phone, email, address, imageData }) > 0)
+                                    {
+                                        MessageBox.Show("Thay đổi thành công!", "Thông báo", MessageBoxButtons.OK);
+                                        form_UserManager_Load(sender, e);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Thay đổi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    query = "exec user_updatenoimage @username  , @IdRole , @DisplayName , " +
+                                    "@CMND , @Male , @DateOfBirth , @Phone , @Email , @Address ";
+                                    if (DataProvider.Instance.ExcuteNunQuery(query,
+                                    new object[] { user, role, name, cmnd, male, dayofbirth, phone, email, address }) > 0)
+                                    {
+                                        MessageBox.Show("Thay đổi thành công!", "Thông báo", MessageBoxButtons.OK);
+                                        form_UserManager_Load(sender, e);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Thay đổi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
-                
+                else
+                {
+                    MessageBox.Show("Mail sai định dạng!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_email.Focus();
+                }                
             }
             else
             {
@@ -409,6 +431,14 @@ namespace QuanLyKho
                 pictureBox1.Image = null;
             }
             if(pictureBox1.Image != null) { chonanh = 1; }
+        }
+
+        private void dgv_data_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            for (int i = 0; i < dgv_data.Rows.Count - 1; i++)
+            {
+                dgv_data.Rows[i].Cells[0].Value = i + 1;
+            }
         }
     }
 }

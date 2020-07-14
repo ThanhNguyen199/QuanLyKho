@@ -30,13 +30,6 @@ namespace QuanLyKho
             newForm.BringToFront();
             newForm.Show();
         }
-
-        private DataTable Supplier_Infor(string TaxCode)
-        {
-            string query = "exec supplier_infor @TaxCode ";
-            return DataProvider.Instance.ExcuteQuery(query,
-                new object[] { TaxCode });
-        }
         #endregion
         private void Form_ListInput_Load(object sender, EventArgs e)
         {
@@ -44,16 +37,16 @@ namespace QuanLyKho
 
             btn_delete.Visible = false;
             btn_show.Visible = false;
+            btn_cancel.Visible = false;
 
             dgv_data.AutoGenerateColumns = false;
             dgv_data.Enabled = true;
             dgv_data.DataSource = DataProvider.Instance.ExcuteQuery("exec input_listinfor", new object[] { });
 
-            lb_codetax.Text = "";
-            lb_supplier.Text = "";
-            lb_phone.Text = "";
-            lb_mail.Text = "";
-            lb_address.Text = "";
+            txt_idinput.Text = "";
+            txt_codetax.Text = "";
+            txt_supplier.Text = "";
+            txt_user.Text = "";
             DateTime d = DateTime.Now;
             dateTimePicker2.Value = new DateTime(d.Year, d.Month, 1);
             dateTimePicker1.Value = dateTimePicker2.Value.AddMonths(1).AddDays(-1);
@@ -97,6 +90,21 @@ namespace QuanLyKho
         private void btn_delete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            Form_ListInput_Load(sender, e);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            btn_cancel.Visible = true;
+            dgv_data.AutoGenerateColumns = false;
+            dgv_data.Enabled = true;
+            string query = "exec getInput @FromDate , @ToDate , @IdInput , @SupplierName , @Taxcode , @Usersname ";
+            dgv_data.DataSource = DataProvider.Instance.ExcuteQuery(query, 
+                new object[] { dateTimePicker2.Value, dateTimePicker1.Value, txt_idinput.Text, txt_supplier.Text, txt_codetax.Text,txt_user.Text });
         }
     }
 }

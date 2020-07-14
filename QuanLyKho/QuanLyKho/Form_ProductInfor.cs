@@ -26,22 +26,15 @@ namespace QuanLyKho
 
         private void Form_ProductInfor_Load(object sender, EventArgs e)
         {
-            txt_id.Text = "";
-            cbb_loai.Text = "";
+            lb_id.Text = "";
             txt_name.Text = "";
-            txt_bar.Text = "";
-            cbb_unit.Text = "";
-            txt_qr.Text = "";
             txt_price.Text = "";
             txt_from.Text = "";
             pictureBox1.Image = null;
 
-            txt_id.Enabled = false;
             txt_name.Enabled = false;
             cbb_loai.Enabled = false;
-            txt_bar.Enabled = false;
             cbb_unit.Enabled = false;
-            txt_qr.Enabled = false;
             txt_price.Enabled = false;
             txt_from.Enabled = false;
             chonanh = 0;
@@ -57,7 +50,7 @@ namespace QuanLyKho
             }
 
             btn_add.Enabled = true;
-            btn_change.Enabled = true;
+            btn_change.Enabled = false;
             btn_save.Enabled = false;
             btn_cancel.Enabled = false;
             btn_choose.Enabled = false;
@@ -65,10 +58,12 @@ namespace QuanLyKho
             cbb_loai.DataSource = DataProvider.Instance.ExcuteQuery("select * from ProductCategory");
             cbb_loai.DisplayMember = "DisplayName";
             cbb_loai.ValueMember = "Id";
+            cbb_loai.Text = "";
 
             cbb_unit.DataSource = DataProvider.Instance.ExcuteQuery("select * from Unit");
             cbb_unit.DisplayMember = "DisplayName";
             cbb_unit.ValueMember = "Id";
+            cbb_unit.Text = "";
 
             dgv_data.AutoGenerateColumns = false;
             dgv_data.Enabled = true;
@@ -77,22 +72,17 @@ namespace QuanLyKho
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            txt_id.Text = "SP";
+            lb_id.Text = DataProvider.Instance.ExcuteScalar("exec AutoProduct").ToString();
             cbb_loai.Text = "";
             txt_name.Text = "";
-            txt_bar.Text = "";
             cbb_unit.Text = "";
-            txt_qr.Text = "";
             txt_price.Text = "";
             txt_from.Text = "";
             pictureBox1.Image = null;
 
-            txt_id.Enabled = true;
             txt_name.Enabled = true;
             cbb_loai.Enabled = true;
-            txt_bar.Enabled = true;
             cbb_unit.Enabled = true;
-            txt_qr.Enabled = true;
             txt_price.Enabled = true;
             txt_from.Enabled = true;
 
@@ -106,45 +96,35 @@ namespace QuanLyKho
 
         private void btn_change_Click(object sender, EventArgs e)
         {
-            if (txt_id.Text != "")
-            {
-                txt_name.Enabled = true;
-                cbb_loai.Enabled = true;
-                txt_bar.Enabled = true;
-                cbb_unit.Enabled = true;
-                txt_qr.Enabled = true;
-                txt_price.Enabled = true;
-                txt_from.Enabled = true;
+            txt_name.Enabled = true;
+            cbb_loai.Enabled = true;
+            cbb_unit.Enabled = true;
+            txt_price.Enabled = true;
+            txt_from.Enabled = true;
 
-                btn_add.Enabled = false;
-                btn_change.Enabled = false;
-                btn_save.Enabled = true;
-                btn_cancel.Enabled = true;
-                btn_choose.Enabled = true;
-                chon = 2;
-            }
-            else
-            {
-                MessageBox.Show("Hãy chọn 1 đối tượng!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }            
+            btn_add.Enabled = false;
+            btn_change.Enabled = false;
+            btn_save.Enabled = true;
+            btn_cancel.Enabled = true;
+            btn_choose.Enabled = true;
+            chon = 2;
+
         }
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (txt_id.Text != "" && txt_price.Text != "" && txt_from.Text != "")
+            if (lb_id.Text != "" && txt_price.Text != "" && txt_from.Text != "")
             {
-                
-                
+
+                string id = lb_id.Text;
+                string loai = cbb_loai.SelectedValue.ToString();
+                string name = txt_name.Text;
+                string unit = cbb_unit.SelectedValue.ToString();
+                string price = txt_price.Text;
+                string from = txt_from.Text;
+
                 if (chon == 1)
                 {
-                    string id = txt_id.Text;
-                    string loai = cbb_loai.SelectedValue.ToString();
-                    string name = txt_name.Text;
-                    string bar = txt_bar.Text;
-                    string unit = cbb_unit.SelectedValue.ToString();
-                    string qr = txt_qr.Text;
-                    string price = txt_price.Text;
-                    string from = txt_from.Text;
                     byte[] imageData = null;
 
                     using (FileStream fs = new FileStream(open.FileName, FileMode.Open, FileAccess.Read))
@@ -152,16 +132,16 @@ namespace QuanLyKho
                         imageData = new Byte[fs.Length];
                         fs.Read(imageData, 0, Convert.ToInt32(fs.Length));
                     }
-                    if(imageData == null)
+                    if (imageData == null)
                     {
                         MessageBox.Show("Hãy chọn ảnh!", "Thông báo", MessageBoxButtons.OK);
                     }
                     else
                     {
                         string query = "exec product_insert @Id , @IdCategory , @DisplayName , @Inventory " +
-                        ", @IdUnit , @QRCode , @BarCode , @Price , @Froms , @Images ";
+                        ", @IdUnit , @Price , @Froms , @Images ";
                         if (DataProvider.Instance.ExcuteNunQuery(query,
-                            new object[] { id, loai, name, 0, unit, qr, bar, price, from, imageData }) > 0)
+                            new object[] { id, loai, name, 0, unit, price, from, imageData }) > 0)
                         {
                             MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK);
                             Form_ProductInfor_Load(sender, e);
@@ -174,15 +154,6 @@ namespace QuanLyKho
                 }
                 else if (chon == 2)
                 {
-                    string id = txt_id.Text;
-                    string loai = cbb_loai.SelectedValue.ToString();
-                    string name = txt_name.Text;
-                    string bar = txt_bar.Text;
-                    string unit = cbb_unit.SelectedValue.ToString();
-                    string qr = txt_qr.Text;
-                    string price = txt_price.Text;
-                    string from = txt_from.Text;
-
                     if (chonanh == 1)
                     {
                         byte[] imageData = null;
@@ -192,9 +163,9 @@ namespace QuanLyKho
                             fs.Read(imageData, 0, Convert.ToInt32(fs.Length));
                         }
                         string query = "exec product_update @Id , @IdCategory , @DisplayName " +
-                        ", @IdUnit , @QRCode , @BarCode , @Price , @Froms , @Images ";
+                        ", @IdUnit , @Price , @Froms , @Images ";
                         if (DataProvider.Instance.ExcuteNunQuery(query,
-                            new object[] { id, loai, name, unit, qr, bar, price, from, imageData }) > 0)
+                            new object[] { id, loai, name, unit, price, from, imageData }) > 0)
                         {
                             MessageBox.Show("Thay đổi thành công!", "Thông báo", MessageBoxButtons.OK);
                             Form_ProductInfor_Load(sender, e);
@@ -207,9 +178,9 @@ namespace QuanLyKho
                     else
                     {
                         string query = "exec product_updatenoimage @Id , @IdCategory , @DisplayName " +
-                        ", @IdUnit , @QRCode , @BarCode , @Price , @Froms ";
+                        ", @IdUnit , @Price , @Froms ";
                         if (DataProvider.Instance.ExcuteNunQuery(query,
-                            new object[] { id, loai, name, unit, qr, bar, price, from }) > 0)
+                            new object[] { id, loai, name, unit, price, from }) > 0)
                         {
                             MessageBox.Show("Thay đổi thành công!", "Thông báo", MessageBoxButtons.OK);
                             Form_ProductInfor_Load(sender, e);
@@ -250,17 +221,16 @@ namespace QuanLyKho
 
         private void dgv_data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btn_change.Enabled = true;
             int i = dgv_data.CurrentRow.Index;
-            txt_id.Text = dgv_data.Rows[i].Cells[0].Value.ToString();
-            cbb_loai.Text = dgv_data.Rows[i].Cells[1].Value.ToString();
-            txt_name.Text = dgv_data.Rows[i].Cells[2].Value.ToString();
-            cbb_unit.Text = dgv_data.Rows[i].Cells[3].Value.ToString();
-            txt_qr.Text = dgv_data.Rows[i].Cells[4].Value.ToString();
-            txt_bar.Text = dgv_data.Rows[i].Cells[5].Value.ToString();
-            txt_price.Text = dgv_data.Rows[i].Cells[6].Value.ToString();
-            txt_from.Text = dgv_data.Rows[i].Cells[7].Value.ToString();
+            lb_id.Text = dgv_data.Rows[i].Cells[1].Value.ToString();
+            cbb_loai.Text = dgv_data.Rows[i].Cells[2].Value.ToString();
+            txt_name.Text = dgv_data.Rows[i].Cells[3].Value.ToString();
+            cbb_unit.Text = dgv_data.Rows[i].Cells[4].Value.ToString();
+            txt_price.Text = dgv_data.Rows[i].Cells[5].Value.ToString();
+            txt_from.Text = dgv_data.Rows[i].Cells[6].Value.ToString();
 
-            string query = "select * from Product where Id = N'" + txt_id.Text + "'";
+            string query = "select * from Product where Id = N'" + lb_id.Text + "'";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
@@ -276,6 +246,14 @@ namespace QuanLyKho
                 {
                     pictureBox1.Image = null;
                 }
+            }
+        }
+
+        private void dgv_data_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            for (int i = 0; i < dgv_data.Rows.Count - 1; i++)
+            {
+                dgv_data.Rows[i].Cells[0].Value = i + 1;
             }
         }
     }

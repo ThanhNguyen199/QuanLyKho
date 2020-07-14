@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label11 = new System.Windows.Forms.Label();
@@ -52,12 +53,12 @@
             this.lb_address = new System.Windows.Forms.Label();
             this.lb_phone = new System.Windows.Forms.Label();
             this.panel_add = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_IdInput = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lb_IdInput = new System.Windows.Forms.Label();
             this.cbb_user = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgv_data = new System.Windows.Forms.DataGridView();
             this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -284,54 +285,26 @@
             // 
             // panel_add
             // 
+            this.panel_add.Controls.Add(this.lb_IdInput);
             this.panel_add.Controls.Add(this.cbb_user);
             this.panel_add.Controls.Add(this.label2);
             this.panel_add.Controls.Add(this.dateTimePicker1);
             this.panel_add.Controls.Add(this.label7);
-            this.panel_add.Controls.Add(this.txt_IdInput);
             this.panel_add.Controls.Add(this.label1);
             this.panel_add.Location = new System.Drawing.Point(25, 266);
             this.panel_add.Name = "panel_add";
             this.panel_add.Size = new System.Drawing.Size(700, 65);
             this.panel_add.TabIndex = 149;
             // 
-            // dateTimePicker1
+            // lb_IdInput
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(565, 23);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(123, 20);
-            this.dateTimePicker1.TabIndex = 33;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(481, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 19);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "Ngày nhập:";
-            // 
-            // txt_IdInput
-            // 
-            this.txt_IdInput.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_IdInput.Location = new System.Drawing.Point(128, 20);
-            this.txt_IdInput.Name = "txt_IdInput";
-            this.txt_IdInput.Size = new System.Drawing.Size(123, 26);
-            this.txt_IdInput.TabIndex = 31;
-            this.txt_IdInput.TextChanged += new System.EventHandler(this.txt_IdInput_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 19);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Mã phiếu nhập:";
+            this.lb_IdInput.AutoSize = true;
+            this.lb_IdInput.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_IdInput.Location = new System.Drawing.Point(145, 23);
+            this.lb_IdInput.Name = "lb_IdInput";
+            this.lb_IdInput.Size = new System.Drawing.Size(53, 19);
+            this.lb_IdInput.TabIndex = 149;
+            this.lb_IdInput.Text = "IdInput";
             // 
             // cbb_user
             // 
@@ -352,11 +325,38 @@
             this.label2.TabIndex = 147;
             this.label2.Text = "Người lập:";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(565, 23);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(123, 20);
+            this.dateTimePicker1.TabIndex = 33;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(481, 24);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 19);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Ngày nhập:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 19);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Mã phiếu nhập:";
+            // 
             // dgv_data
             // 
             dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Empty;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Empty;
             this.dgv_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -389,6 +389,14 @@
             this.dgv_data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
             this.dgv_data.Location = new System.Drawing.Point(25, 337);
             this.dgv_data.Name = "dgv_data";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_data.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_data.RowHeadersVisible = false;
             this.dgv_data.Size = new System.Drawing.Size(700, 200);
             this.dgv_data.TabIndex = 151;
@@ -408,7 +416,7 @@
             this.name.Name = "name";
             this.name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.name.Width = 150;
+            this.name.Width = 190;
             // 
             // matax
             // 
@@ -441,6 +449,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(750, 560);
             this.Controls.Add(this.dgv_data);
             this.Controls.Add(this.panel_add);
@@ -486,11 +495,11 @@
         private System.Windows.Forms.Panel panel_add;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt_IdInput;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbb_user;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgv_data;
+        private System.Windows.Forms.Label lb_IdInput;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt;
         private System.Windows.Forms.DataGridViewComboBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn matax;

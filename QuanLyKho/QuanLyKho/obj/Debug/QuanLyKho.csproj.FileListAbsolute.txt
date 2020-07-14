@@ -329,3 +329,5 @@ D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.pd
 D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Form_InputProduct.resources
 D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Form_DeliveryBillProduct.resources
 D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Form_ListInput.resources
+D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Form_ListOutput.resources
+D:\Nam_3_2\Thuctapchuyenmon\QuanLyKho\QuanLyKho\QuanLyKho\obj\Debug\QuanLyKho.Form_ListInventory.resources

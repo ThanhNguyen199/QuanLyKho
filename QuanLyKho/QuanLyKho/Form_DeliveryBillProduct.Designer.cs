@@ -28,10 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv_data = new System.Windows.Forms.DataGridView();
-            this.txt_IdDelivery = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.panel_add = new System.Windows.Forms.Panel();
+            this.cbb_user = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lb_IdDelivery = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
@@ -54,45 +61,18 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dgv_data = new System.Windows.Forms.DataGridView();
             this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.matax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Inventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inventory = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sumprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).BeginInit();
             this.panel_add.SuspendLayout();
             this.grb_customer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgv_data
-            // 
-            this.dgv_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stt,
-            this.name,
-            this.matax,
-            this.price,
-            this.quantity,
-            this.Inventory,
-            this.sumprice});
-            this.dgv_data.Location = new System.Drawing.Point(25, 337);
-            this.dgv_data.Name = "dgv_data";
-            this.dgv_data.Size = new System.Drawing.Size(700, 200);
-            this.dgv_data.TabIndex = 158;
-            // 
-            // txt_IdDelivery
-            // 
-            this.txt_IdDelivery.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_IdDelivery.Location = new System.Drawing.Point(133, 6);
-            this.txt_IdDelivery.Name = "txt_IdDelivery";
-            this.txt_IdDelivery.Size = new System.Drawing.Size(123, 26);
-            this.txt_IdDelivery.TabIndex = 31;
             // 
             // label1
             // 
@@ -106,13 +86,53 @@
             // 
             // panel_add
             // 
+            this.panel_add.Controls.Add(this.cbb_user);
+            this.panel_add.Controls.Add(this.label2);
+            this.panel_add.Controls.Add(this.lb_IdDelivery);
             this.panel_add.Controls.Add(this.dateTimePicker1);
-            this.panel_add.Controls.Add(this.txt_IdDelivery);
             this.panel_add.Controls.Add(this.label1);
             this.panel_add.Location = new System.Drawing.Point(25, 293);
             this.panel_add.Name = "panel_add";
-            this.panel_add.Size = new System.Drawing.Size(350, 38);
+            this.panel_add.Size = new System.Drawing.Size(590, 38);
             this.panel_add.TabIndex = 157;
+            // 
+            // cbb_user
+            // 
+            this.cbb_user.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_user.FormattingEnabled = true;
+            this.cbb_user.Location = new System.Drawing.Point(330, 6);
+            this.cbb_user.Name = "cbb_user";
+            this.cbb_user.Size = new System.Drawing.Size(137, 27);
+            this.cbb_user.TabIndex = 160;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(251, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 19);
+            this.label2.TabIndex = 159;
+            this.label2.Text = "Người lập:";
+            // 
+            // lb_IdDelivery
+            // 
+            this.lb_IdDelivery.AutoSize = true;
+            this.lb_IdDelivery.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_IdDelivery.Location = new System.Drawing.Point(129, 9);
+            this.lb_IdDelivery.Name = "lb_IdDelivery";
+            this.lb_IdDelivery.Size = new System.Drawing.Size(95, 19);
+            this.lb_IdDelivery.TabIndex = 158;
+            this.lb_IdDelivery.Text = "Mã phiếu xuất";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(271, 9);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(0, 20);
+            this.dateTimePicker1.TabIndex = 34;
             // 
             // btn_close
             // 
@@ -370,20 +390,53 @@
             this.label19.TabIndex = 134;
             this.label19.Text = "SĐT:";
             // 
-            // dateTimePicker1
+            // dgv_data
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(271, 9);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(0, 20);
-            this.dateTimePicker1.TabIndex = 34;
+            dataGridViewCellStyle1.Format = "N0";
+            this.dgv_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_data.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.stt,
+            this.name,
+            this.matax,
+            this.price,
+            this.quantity,
+            this.inventory,
+            this.sumprice});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_data.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
+            this.dgv_data.Location = new System.Drawing.Point(25, 337);
+            this.dgv_data.Name = "dgv_data";
+            this.dgv_data.RowHeadersVisible = false;
+            this.dgv_data.Size = new System.Drawing.Size(700, 200);
+            this.dgv_data.TabIndex = 160;
+            this.dgv_data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_data_CellClick);
+            this.dgv_data.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_data_CellValueChanged);
             // 
             // stt
             // 
             this.stt.HeaderText = "STT";
             this.stt.Name = "stt";
-            this.stt.Width = 40;
+            this.stt.Width = 50;
             // 
             // name
             // 
@@ -399,11 +452,12 @@
             this.matax.DataPropertyName = "unit";
             this.matax.HeaderText = "Đơn vị tính";
             this.matax.Name = "matax";
-            this.matax.Width = 90;
             // 
             // price
             // 
             this.price.DataPropertyName = "Price";
+            dataGridViewCellStyle3.Format = "N0";
+            this.price.DefaultCellStyle = dataGridViewCellStyle3;
             this.price.HeaderText = "Giá";
             this.price.Name = "price";
             // 
@@ -411,28 +465,30 @@
             // 
             this.quantity.HeaderText = "Số lượng";
             this.quantity.Name = "quantity";
-            this.quantity.Width = 75;
             // 
-            // Inventory
+            // inventory
             // 
-            this.Inventory.DataPropertyName = "Inventory";
-            this.Inventory.HeaderText = "Tồn";
-            this.Inventory.Name = "Inventory";
-            this.Inventory.Width = 45;
+            this.inventory.DataPropertyName = "Inventory";
+            this.inventory.HeaderText = "Tồn";
+            this.inventory.Name = "inventory";
+            this.inventory.Width = 50;
             // 
             // sumprice
             // 
+            dataGridViewCellStyle4.Format = "N0";
+            this.sumprice.DefaultCellStyle = dataGridViewCellStyle4;
             this.sumprice.HeaderText = "Giá trị đơn hàng";
             this.sumprice.Name = "sumprice";
-            this.sumprice.Width = 135;
+            this.sumprice.Width = 130;
             // 
             // Form_DeliveryBillProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(750, 560);
-            this.Controls.Add(this.grb_customer);
             this.Controls.Add(this.dgv_data);
+            this.Controls.Add(this.grb_customer);
             this.Controls.Add(this.panel_add);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_add);
@@ -443,19 +499,17 @@
             this.Name = "Form_DeliveryBillProduct";
             this.Text = "s";
             this.Load += new System.EventHandler(this.Form_DeliveryBillProduct_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).EndInit();
             this.panel_add.ResumeLayout(false);
             this.panel_add.PerformLayout();
             this.grb_customer.ResumeLayout(false);
             this.grb_customer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dgv_data;
-        private System.Windows.Forms.TextBox txt_IdDelivery;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel_add;
         private System.Windows.Forms.Button btn_close;
@@ -481,12 +535,16 @@
         private System.Windows.Forms.Label lb_cusleganame;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridView dgv_data;
+        private System.Windows.Forms.Label lb_IdDelivery;
+        private System.Windows.Forms.ComboBox cbb_user;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt;
         private System.Windows.Forms.DataGridViewComboBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn matax;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Inventory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inventory;
         private System.Windows.Forms.DataGridViewTextBoxColumn sumprice;
     }
 }

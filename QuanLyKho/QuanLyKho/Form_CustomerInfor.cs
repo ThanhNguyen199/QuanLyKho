@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,18 @@ namespace QuanLyKho
             InitializeComponent();
         }
         int chon;
+        private bool isEmail(string inputEmail)
+        {
+            inputEmail = inputEmail ?? string.Empty;
+            string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputEmail))
+                return (true);
+            else
+                return (false);
+        }
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -24,7 +37,7 @@ namespace QuanLyKho
 
         private void Form_CustomerInfor_Load(object sender, EventArgs e)
         {
-            txt_id.Text = "";
+            lb_id.Text = "";
             txt_taxcode.Text = ""; 
             txt_buyer.Text = "";
             txt_legalname.Text = "";
@@ -32,8 +45,7 @@ namespace QuanLyKho
             txt_email.Text = "";
             txt_address.Text = "";
             txt_note.Text = "";
-
-            txt_id.Enabled = false;
+            
             txt_buyer.Enabled = false;
             txt_taxcode.Enabled = false;
             txt_legalname.Enabled = false;
@@ -63,7 +75,7 @@ namespace QuanLyKho
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            txt_id.Text = "CT";
+            lb_id.Text = DataProvider.Instance.ExcuteScalar("exec AutoCustomer").ToString();
             txt_taxcode.Text = "";
             txt_buyer.Text = "";
             txt_legalname.Text = "";
@@ -71,8 +83,7 @@ namespace QuanLyKho
             txt_email.Text = "";
             txt_address.Text = "";
             txt_note.Text = "";
-
-            txt_id.Enabled = true;
+            
             txt_buyer.Enabled = true;
             txt_taxcode.Enabled = true;
             txt_legalname.Enabled = true;
@@ -107,57 +118,68 @@ namespace QuanLyKho
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (txt_id.Text != "" && txt_taxcode.Text != "" &&txt_buyer.Text != "" && txt_legalname.Text != "" && txt_phone.Text != "" && txt_email.Text != "" && txt_address.Text != "")
+            if (lb_id.Text != "" && txt_taxcode.Text != "" &&txt_buyer.Text != "" && txt_legalname.Text != "" && txt_phone.Text != "" && txt_email.Text != "" && txt_address.Text != "")
             {
-                if (chon == 1)
+                if (isEmail(txt_email.Text))
                 {
-                    string id = txt_id.Text;
-                    string tax = txt_taxcode.Text.Trim();
-                    string buyer = txt_buyer.Text;
-                    string legalname = txt_legalname.Text;
-                    string address = txt_address.Text;
-                    string phone = txt_phone.Text;
-                    string email = txt_email.Text;
-                    string note = txt_note.Text;
-
-                    string query = "exec customer_insert @Id , @BuyerName , @BuyerLegaName , @Taxcode " +
-                        ", @Address , @Phone , @Email , @MoreInfo ";
-                    if (DataProvider.Instance.ExcuteNunQuery(query,
-                        new object[] { id,  buyer, legalname, tax, address, phone, email, note }) > 0)
+                    if (chon == 1)
                     {
-                        MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK);
-                        Form_CustomerInfor_Load(sender, e);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thêm thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                        string id = lb_id.Text;
+                        string tax = txt_taxcode.Text.Trim();
+                        string buyer = txt_buyer.Text;
+                        string legalname = txt_legalname.Text;
+                        string address = txt_address.Text;
+                        string phone = txt_phone.Text;
+                        string email = txt_email.Text;
+                        string note = txt_note.Text;
 
+                        string query = "exec customer_insert @Id , @BuyerName , @BuyerLegaName , @Taxcode " +
+                            ", @Address , @Phone , @Email , @MoreInfo ";
+                        if (DataProvider.Instance.ExcuteNunQuery(query,
+                            new object[] { id, buyer, legalname, tax, address, phone, email, note }) > 0)
+                        {
+                            MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK);
+                            Form_CustomerInfor_Load(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thêm thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    }
+                    else if (chon == 2)
+                    {
+                        string id = lb_id.Text;
+                        string tax = txt_taxcode.Text.Trim();
+                        string buyer = txt_buyer.Text;
+                        string legalname = txt_legalname.Text;
+                        string address = txt_address.Text;
+                        string phone = txt_phone.Text;
+                        string email = txt_email.Text;
+                        string note = txt_note.Text;
+
+                        string query = "exec customer_update @Id , @BuyerName , @BuyerLegaName , @Taxcode " +
+                            ", @Address , @Phone , @Email , @MoreInfo ";
+                        if (DataProvider.Instance.ExcuteNunQuery(query,
+                            new object[] { id, buyer, legalname, tax, address, phone, email, note }) > 0)
+                        {
+                            MessageBox.Show("Thay đổi thành công!", "Thông báo", MessageBoxButtons.OK);
+                            Form_CustomerInfor_Load(sender, e);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Thay đổi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
-                else if (chon == 2)
+                else
                 {
-                    string id = txt_id.Text;
-                    string tax = txt_taxcode.Text.Trim();
-                    string buyer = txt_buyer.Text;
-                    string legalname = txt_legalname.Text;
-                    string address = txt_address.Text;
-                    string phone = txt_phone.Text;
-                    string email = txt_email.Text;
-                    string note = txt_note.Text;
-
-                    string query = "exec customer_update @Id , @BuyerName , @BuyerLegaName , @Taxcode " +
-                        ", @Address , @Phone , @Email , @MoreInfo ";
-                    if (DataProvider.Instance.ExcuteNunQuery(query,
-                        new object[] { id, buyer, legalname, tax, address, phone, email, note }) > 0)
-                    {
-                        MessageBox.Show("Thay đổi thành công!", "Thông báo", MessageBoxButtons.OK);
-                        Form_CustomerInfor_Load(sender, e);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thay đổi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("Mail không đúng định dạng!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -169,14 +191,22 @@ namespace QuanLyKho
         private void dgv_data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = dgv_data.CurrentRow.Index;
-            txt_id.Text = dgv_data.Rows[i].Cells[0].Value.ToString();
-            txt_taxcode.Text = dgv_data.Rows[i].Cells[1].Value.ToString();
-            txt_buyer.Text = dgv_data.Rows[i].Cells[2].Value.ToString();
-            txt_legalname.Text = dgv_data.Rows[i].Cells[3].Value.ToString();
-            txt_phone.Text = dgv_data.Rows[i].Cells[4].Value.ToString();
-            txt_email.Text = dgv_data.Rows[i].Cells[5].Value.ToString();
-            txt_address.Text = dgv_data.Rows[i].Cells[6].Value.ToString();
-            txt_note.Text = dgv_data.Rows[i].Cells[7].Value.ToString();
+            lb_id.Text = dgv_data.Rows[i].Cells[1].Value.ToString();
+            txt_taxcode.Text = dgv_data.Rows[i].Cells[2].Value.ToString();
+            txt_buyer.Text = dgv_data.Rows[i].Cells[3].Value.ToString();
+            txt_legalname.Text = dgv_data.Rows[i].Cells[4].Value.ToString();
+            txt_phone.Text = dgv_data.Rows[i].Cells[5].Value.ToString();
+            txt_email.Text = dgv_data.Rows[i].Cells[6].Value.ToString();
+            txt_address.Text = dgv_data.Rows[i].Cells[7].Value.ToString();
+            txt_note.Text = dgv_data.Rows[i].Cells[8].Value.ToString();
+        }
+
+        private void dgv_data_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            for (int i = 0; i < dgv_data.Rows.Count - 1; i++)
+            {
+                dgv_data.Rows[i].Cells[0].Value = i + 1;
+            }
         }
     }
 }

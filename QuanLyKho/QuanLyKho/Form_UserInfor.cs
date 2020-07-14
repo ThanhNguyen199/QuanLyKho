@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,6 +16,19 @@ namespace QuanLyKho
         public Form_UserInfor()
         {
             InitializeComponent();
+        }
+
+        private bool isEmail(string inputEmail)
+        {
+            inputEmail = inputEmail ?? string.Empty;
+            string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputEmail))
+                return (true);
+            else
+                return (false);
         }
 
         private DataTable Infor(string username)
@@ -48,8 +62,6 @@ namespace QuanLyKho
             btn_changepass.Visible = true;
             btn_change.Enabled = true;
             panel_change.Visible = false;
-            txt1.Enabled = false;
-            txt2.Enabled = false;
             txt4.Enabled = false;
             txt5.Enabled = false;
             txt6.Enabled = false;
@@ -57,11 +69,11 @@ namespace QuanLyKho
             txt8.Enabled = false;
             txt9.Enabled = false;
             txt10.Enabled = false;
-            txt1.Text = Form_Login.userlogin;
-            DataTable dt = Infor(txt1.Text);
+            lb_1.Text = Form_Login.userlogin;
+            DataTable dt = Infor(lb_1.Text);
             foreach (DataRow row in dt.Rows)
             {
-                txt2.Text = row["Description"].ToString();
+                lb_2.Text = row["Description"].ToString();
                 txt4.Text = row["DisplayName"].ToString();
                 txt5.Text = row["CMND"].ToString();
                 txt6.Text = row["Male"].ToString();
@@ -74,26 +86,34 @@ namespace QuanLyKho
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if(txt6.Text.Trim().ToLower() == "nam"|| txt6.Text.Trim().ToLower() == "nữ")
+            if (isEmail(txt9.Text))
             {
-                string query = "exec user_update @username , @DisplayName , @CMND , @Male ," +
-                " @DateOfBirth , @Phone , @Email , @Address ";
-                if (DataProvider.Instance.ExcuteNunQuery(query,
-                    new object[] { Form_Login.userlogin, txt4.Text, txt5.Text,
-                        txt6.Text, dateTimePicker1.Value, txt8.Text, txt9.Text, txt10.Text }) > 0)
+                if (txt6.Text.Trim().ToLower() == "nam" || txt6.Text.Trim().ToLower() == "nữ")
                 {
-                    MessageBox.Show("Thay đổi thành công!", "Thông báo", MessageBoxButtons.OK);
-                    form_UserInfor_Load(sender, e);
+                    string query = "exec user_update @username , @DisplayName , @CMND , @Male ," +
+                    " @DateOfBirth , @Phone , @Email , @Address ";
+                    if (DataProvider.Instance.ExcuteNunQuery(query,
+                        new object[] { Form_Login.userlogin, txt4.Text, txt5.Text,
+                        txt6.Text, dateTimePicker1.Value, txt8.Text, txt9.Text, txt10.Text }) > 0)
+                    {
+                        MessageBox.Show("Thay đổi thành công!", "Thông báo", MessageBoxButtons.OK);
+                        form_UserInfor_Load(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thay đổi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Thay đổi thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Nhập sai giới tính!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Nhập sai giới tính", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }            
+                MessageBox.Show("Mail sai định dạng!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt9.Focus();
+            }
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)

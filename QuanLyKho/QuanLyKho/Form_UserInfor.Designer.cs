@@ -43,7 +43,6 @@
             this.txt4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txt1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_change = new System.Windows.Forms.Panel();
@@ -54,7 +53,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.btn_changepass = new System.Windows.Forms.Button();
-            this.txt2 = new System.Windows.Forms.TextBox();
+            this.lb_1 = new System.Windows.Forms.Label();
+            this.lb_2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_change.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -204,14 +204,6 @@
             this.label3.TabIndex = 32;
             this.label3.Text = "Quyền hạn:";
             // 
-            // txt1
-            // 
-            this.txt1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt1.Location = new System.Drawing.Point(158, 93);
-            this.txt1.Name = "txt1";
-            this.txt1.Size = new System.Drawing.Size(119, 26);
-            this.txt1.TabIndex = 29;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -328,20 +320,34 @@
             this.btn_changepass.UseVisualStyleBackColor = true;
             this.btn_changepass.Click += new System.EventHandler(this.btn_changepass_Click);
             // 
-            // txt2
+            // lb_1
             // 
-            this.txt2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt2.Location = new System.Drawing.Point(158, 134);
-            this.txt2.Name = "txt2";
-            this.txt2.Size = new System.Drawing.Size(119, 26);
-            this.txt2.TabIndex = 54;
+            this.lb_1.AutoSize = true;
+            this.lb_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lb_1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_1.Location = new System.Drawing.Point(161, 96);
+            this.lb_1.Name = "lb_1";
+            this.lb_1.Size = new System.Drawing.Size(90, 19);
+            this.lb_1.TabIndex = 55;
+            this.lb_1.Text = "Mã nhân viên";
+            // 
+            // lb_2
+            // 
+            this.lb_2.AutoSize = true;
+            this.lb_2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_2.Location = new System.Drawing.Point(161, 137);
+            this.lb_2.Name = "lb_2";
+            this.lb_2.Size = new System.Drawing.Size(74, 19);
+            this.lb_2.TabIndex = 56;
+            this.lb_2.Text = "Quyền hạn";
             // 
             // Form_UserInfor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 560);
-            this.Controls.Add(this.txt2);
+            this.Controls.Add(this.lb_2);
+            this.Controls.Add(this.lb_1);
             this.Controls.Add(this.btn_changepass);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.pictureBox2);
@@ -361,7 +367,6 @@
             this.Controls.Add(this.txt4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txt1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.pictureBox1);
@@ -395,7 +400,6 @@
         private System.Windows.Forms.TextBox txt4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel_change;
@@ -406,6 +410,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btn_picture;
         private System.Windows.Forms.Button btn_changepass;
-        private System.Windows.Forms.TextBox txt2;
+        private System.Windows.Forms.Label lb_1;
+        private System.Windows.Forms.Label lb_2;
     }
 }

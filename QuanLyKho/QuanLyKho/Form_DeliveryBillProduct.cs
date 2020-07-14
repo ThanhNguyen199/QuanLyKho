@@ -24,16 +24,30 @@ namespace QuanLyKho
                 new object[] { IdProduct });
         }
 
-        public bool DeliveryBill_Insert(string IdDelivery, DateTime date, string username)
+        public bool DeliveryBill_Insert(string IdDelivery, DateTime date, string IdCustomer, string username)
         {
-            string query = "exec deliverybill_insert @IdDelivery , @DateOutput , @IdUser ";
-            return DataProvider.Instance.ExcuteNunQuery(query, new object[] { IdDelivery, date, username }) > 0;
+            string query = "exec deliverybill_insert @IdDelivery , @DateOutput , @IdCustomer , @IdUser ";
+            return DataProvider.Instance.ExcuteNunQuery(query, new object[] { IdDelivery, date, IdCustomer, username }) > 0;
         }
 
-        public bool DeliveryBillInfor_Insert(string IdDelivery, string IdProduct, string IdCustomer, int QuantityOut, float Price)
+        public bool DeliveryBillInfor_Insert(string IdDelivery, string IdProduct, int QuantityOut, float Price)
         {
-            string query = "exec deliverybillinfo_insert @IdDelivery , @IdProduct , @IdCustomer , @QuantityOut , @Price ";
-            return DataProvider.Instance.ExcuteNunQuery(query, new object[] { IdDelivery, IdProduct, IdCustomer, QuantityOut, Price }) > 0;
+            string query = "exec deliverybillinfo_insert @IdDelivery , @IdProduct , @QuantityOut , @Price ";
+            return DataProvider.Instance.ExcuteNunQuery(query, new object[] { IdDelivery, IdProduct, QuantityOut, Price }) > 0;
+        }
+
+        private DataTable Product_Inventory(string IdProduct, int Quantity)
+        {
+            string query = "exec input_insertinventory @IdProduct , @Quantity ";
+            return DataProvider.Instance.ExcuteQuery(query,
+                new object[] { IdProduct, Quantity });
+        }
+
+        private DataTable Product_DeleteInventory(string IdProduct, int Quantity)
+        {
+            string query = "exec input_deleteinventory @IdProduct , @Quantity ";
+            return DataProvider.Instance.ExcuteQuery(query,
+                new object[] { IdProduct, Quantity });
         }
 
         public bool Delete_DeliveryBill(string id)
@@ -49,7 +63,7 @@ namespace QuanLyKho
         }
         public bool Update_PriceTotal(string Id)
         {
-            string query = "exec deliverybill_insertpricetotal @IdInput ";
+            string query = "exec deliverybill_insertpricetotal @IdOutput ";
             return DataProvider.Instance.ExcuteNunQuery(query, new object[] { Id }) > 0;
         }
         #endregion
@@ -83,6 +97,11 @@ namespace QuanLyKho
             cbb_cusId.ValueMember = "Id";
             cbb_cusId.Text = "";
 
+            cbb_user.DataSource = DataProvider.Instance.ExcuteQuery("select * from Users");
+            cbb_user.DisplayMember = "DisplayName";
+            cbb_user.ValueMember = "UserName";
+            cbb_user.Text = "";
+
             lb_cusname.Text = "";
             lb_cusleganame.Text = "";
             lb_custaxcode.Text = "";
@@ -91,14 +110,13 @@ namespace QuanLyKho
             lb_cusnote.Text = "";
             lb_cusaddress.Text = "";
 
+            lb_IdDelivery.Text = DataProvider.Instance.ExcuteScalar("exec AutoOutput").ToString();
             sum_price = 0;
             row = 0;
         }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            txt_IdDelivery.Text = "PX";
-
             lb_cusname.Text = "";
             lb_cusleganame.Text = "";
             lb_custaxcode.Text = "";
@@ -123,74 +141,75 @@ namespace QuanLyKho
         #endregion
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (dgv_data.Rows.Count > 1 && cbb_cusId.Text != "")
+            if (dgv_data.Rows.Count > 1 && cbb_cusId.Text != "" && cbb_user.Text != "")
             {
-                string id = txt_IdDelivery.Text;
+                string id = lb_IdDelivery.Text;
                 DateTime date = dateTimePicker1.Value;
+                string idsupplier = cbb_cusId.SelectedValue.ToString();
+                string useroutput = cbb_user.SelectedValue.ToString();
+                
+                int tam = 0;
+                for (int j = 0; j < dgv_data.Rows.Count - 1; j++)
+                {
+                    int quantity = Convert.ToInt32(dgv_data.Rows[j].Cells[4].Value);
+                    float price = (float)Convert.ToDouble(dgv_data.Rows[j].Cells[6].Value);
 
-                string query = "select * from Input where Id = N'" + id + "'";
-                if (DataProvider.Instance.ExcuteQuery(query).Rows.Count > 0)
-                {
-                    MessageBox.Show("Mã phiếu nhập đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    int tam = 0;
-                    for (int j = 0; j < dgv_data.Rows.Count - 1; j++)
+                    if (quantity <= Convert.ToInt32(dgv_data.Rows[j].Cells[5].Value))
                     {
-                        int quantity = Convert.ToInt32(dgv_data.Rows[j].Cells[4].Value);
-                        float price = (float)Convert.ToDouble(dgv_data.Rows[j].Cells[6].Value);
-
-                        if (quantity < Convert.ToInt32(dgv_data.Rows[j].Cells[5].Value))
-                        {
-                            tam += 1;
-                        }
+                        tam += 1;
                     }
-                    if (tam == dgv_data.Rows.Count - 1)
+                }
+                if (tam == dgv_data.Rows.Count - 1)
+                {
+                    try
                     {
-                        try
+                        if (DeliveryBill_Insert(id, date, useroutput, idsupplier))
                         {
-                            if (DeliveryBill_Insert(id, date, Form_Login.userlogin))
+                            int temp = 0;
+                            for (int j = 0; j < dgv_data.Rows.Count - 1; j++)
                             {
-                                int temp = 0;
-                                for (int j = 0; j < dgv_data.Rows.Count - 1; j++)
-                                {
-                                    string idproduct = dgv_data.Rows[j].Cells[1].Value.ToString();
-                                    string idsupplier = cbb_cusId.SelectedValue.ToString();
-                                    int quantity = Convert.ToInt32(dgv_data.Rows[j].Cells[4].Value);
-                                    float price = (float)Convert.ToDouble(dgv_data.Rows[j].Cells[5].Value);
+                                string idproduct = dgv_data.Rows[j].Cells[1].Value.ToString();
+                                int quantity = Convert.ToInt32(dgv_data.Rows[j].Cells[4].Value);
+                                float price = (float)Convert.ToDouble(dgv_data.Rows[j].Cells[6].Value);
 
-                                    if (DeliveryBillInfor_Insert(id, idproduct, idsupplier, quantity, price))
-                                    {
-                                        temp += 1;
-                                    }
-                                }
-                                if (temp == dgv_data.Rows.Count - 1)
+                                if (DeliveryBillInfor_Insert(id, idproduct, quantity, price))
                                 {
-                                    string mail = lb_cusmail.Text.Trim().ToLower().ToString();
-                                    MessageBox.Show("Lập phiếu xuất " + id + " thành công!", "", MessageBoxButtons.OK);
-                                    Update_PriceTotal(id);
-                                    Form_DeliveryBillProduct_Load(sender, e);
+                                    temp += 1;
+                                    Product_DeleteInventory(idproduct, quantity);
                                 }
-                                else
-                                {
-                                    MessageBox.Show("Lập phiếu xuất " + id + " thất bại! Vui lòng thử lại sau!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    Delete_DeliveryBill(id);
-                                    Delete_DeliveryBillInfor(id);
-                                }
+                            }
+                            if (temp == dgv_data.Rows.Count - 1)
+                            {
+                                string mail = lb_cusmail.Text.Trim().ToLower().ToString();
+                                MessageBox.Show("Lập phiếu xuất " + id + " thành công!", "", MessageBoxButtons.OK);
+                                Update_PriceTotal(id);
+                                Form_DeliveryBillProduct_Load(sender, e);
                             }
                             else
                             {
-                                MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Cảnh báo", MessageBoxButtons.OK);
+                                for (int j = 0; j < dgv_data.Rows.Count - 1; j++)
+                                {
+                                    string idproduct = dgv_data.Rows[j].Cells[1].Value.ToString();
+                                    int quantity = Convert.ToInt32(dgv_data.Rows[j].Cells[4].Value);
+                                    float price = (float)Convert.ToDouble(dgv_data.Rows[j].Cells[6].Value);
+
+                                    Product_Inventory(idproduct, quantity);
+                                }
+                                MessageBox.Show("Lập phiếu xuất " + id + " thất bại! Vui lòng thử lại sau!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Delete_DeliveryBill(id);
+                                Delete_DeliveryBillInfor(id);
                             }
                         }
-                        catch { }
+                        else
+                        {
+                            MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Cảnh báo", MessageBoxButtons.OK);
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Số hàng xuất không được lớn hơn hàng trong kho!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
+                    catch { }
+                }
+                else
+                {
+                    MessageBox.Show("Số hàng xuất không được lớn hơn hàng trong kho!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

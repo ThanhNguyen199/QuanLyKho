@@ -123,6 +123,18 @@
     <Compile Include="Form_ListInput.Designer.cs">
       <DependentUpon>Form_ListInput.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_ListInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ListInventory.Designer.cs">
+      <DependentUpon>Form_ListInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ListOutput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ListOutput.Designer.cs">
+      <DependentUpon>Form_ListOutput.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +190,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ListInput.resx">
       <DependentUpon>Form_ListInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ListInventory.resx">
+      <DependentUpon>Form_ListInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ListOutput.resx">
+      <DependentUpon>Form_ListOutput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>

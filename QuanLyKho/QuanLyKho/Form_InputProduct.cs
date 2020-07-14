@@ -24,16 +24,30 @@ namespace QuanLyKho
                 new object[] { IdProduct });
         }
 
-        public bool InsertInput(string Id, DateTime date,string name)
+        public bool InsertInput(string Id, DateTime date, string name, string IdSupplier)
         {
-            string query = "exec input_insert @Id , @DateInput , @IdUser ";
-            return DataProvider.Instance.ExcuteNunQuery(query, new object[] { Id, date, name }) > 0;
+            string query = "exec input_insert @Id , @DateInput , @IdUser , @IdSupplier";
+            return DataProvider.Instance.ExcuteNunQuery(query, new object[] { Id, date, name, IdSupplier }) > 0;
         }
 
-        public bool Insert_InputInfor(string IdInput, string IdProduct, string IdSupplier, int Quantity, float Price)
+        public bool Insert_InputInfor(string IdInput, string IdProduct, int Quantity, float Price)
         {
-            string query = "exec inputinfor_insert @IdInput , @IdProduct , @IdSupplier , @Quantity , @Price ";
-            return DataProvider.Instance.ExcuteNunQuery(query, new object[] { IdInput, IdProduct, IdSupplier, Quantity, Price }) > 0;
+            string query = "exec inputinfor_insert @IdInput , @IdProduct , @Quantity , @Price ";
+            return DataProvider.Instance.ExcuteNunQuery(query, new object[] { IdInput, IdProduct, Quantity, Price }) > 0;
+        }
+
+        private DataTable Product_Inventory(string IdProduct, int Quantity)
+        {
+            string query = "exec input_insertinventory @IdProduct , @Quantity ";
+            return DataProvider.Instance.ExcuteQuery(query,
+                new object[] { IdProduct, Quantity });
+        }
+
+        private DataTable Product_DeleteInventory(string IdProduct, int Quantity)
+        {
+            string query = "exec input_deleteinventory @IdProduct , @Quantity ";
+            return DataProvider.Instance.ExcuteQuery(query,
+                new object[] { IdProduct, Quantity });
         }
 
         public bool Delete_Input(string id)
@@ -53,7 +67,7 @@ namespace QuanLyKho
             string query = "exec input_insertpricetotal @IdInput ";
             return DataProvider.Instance.ExcuteNunQuery(query, new object[] { Id }) > 0;
         }
-        
+
         #endregion
         #region load
         private void btn_close_Click(object sender, EventArgs e)
@@ -97,6 +111,8 @@ namespace QuanLyKho
             lb_address.Text = "";
             sum_price = 0;
             row = 0;
+
+            lb_IdInput.Text = DataProvider.Instance.ExcuteScalar("exec AutoInput").ToString();
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -107,7 +123,6 @@ namespace QuanLyKho
             lb_mail.Text = "";
             lb_note.Text = "";
             lb_address.Text = "";
-            txt_IdInput.Text = "PN";
 
             panel_add.Visible = true;
             grb_supplier.Enabled = true;
@@ -127,54 +142,57 @@ namespace QuanLyKho
         {
             if (dgv_data.Rows.Count > 1 && cbb_taxcode.Text != "")
             {
-                string id = txt_IdInput.Text;
+                string id = lb_IdInput.Text;
                 DateTime date = dateTimePicker1.Value;
+                string userinput = cbb_user.SelectedValue.ToString();
+                string idsupplier = cbb_taxcode.SelectedValue.ToString();
 
-                string query = "select * from Input where Id = N'" + id + "'";
-                if (DataProvider.Instance.ExcuteQuery(query).Rows.Count > 0)
+                try
                 {
-                    MessageBox.Show("Mã phiếu nhập đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    try
+                    if (InsertInput(id, date, userinput, idsupplier))
                     {
-                        if (InsertInput(id, date, cbb_user.SelectedValue.ToString()))
+                        int temp = 0;
+                        for (int j = 0; j < dgv_data.Rows.Count - 1; j++)
                         {
-                            int temp = 0;
-                            for (int j = 0; j < dgv_data.Rows.Count - 1; j++)
-                            {
-                                string idproduct = dgv_data.Rows[j].Cells[1].Value.ToString();
-                                string idsupplier = cbb_taxcode.SelectedValue.ToString();
-                                int quantity = Convert.ToInt32(dgv_data.Rows[j].Cells[4].Value);
-                                float price = (float)Convert.ToDouble(dgv_data.Rows[j].Cells[5].Value);
+                            string idproduct = dgv_data.Rows[j].Cells[1].Value.ToString();
+                            int quantity = Convert.ToInt32(dgv_data.Rows[j].Cells[4].Value);
+                            float price = (float)Convert.ToDouble(dgv_data.Rows[j].Cells[5].Value);
 
-                                if (Insert_InputInfor(id, idproduct, idsupplier, quantity, price))
-                                {
-                                    temp += 1;
-                                }
-                            }
-                            if (temp == dgv_data.Rows.Count - 1)
+                            if (Insert_InputInfor(id, idproduct, quantity, price))
                             {
-                                string mail = lb_mail.Text.Trim().ToLower().ToString();
-                                MessageBox.Show("Lập phiếu nhập " + id + " thành công!", "", MessageBoxButtons.OK);
-                                Update_PriceTotal(id);
-                                Form_InputProduct_Load(sender, e);
+                                temp += 1;
+                                Product_Inventory(idproduct, quantity);
                             }
-                            else
-                            {
-                                MessageBox.Show("Lập phiếu nhập " + id + " thất bại! Vui lòng thử lại sau.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                Delete_Input(id);
-                                Delete_InputInfor(id);
-                            }
+                        }
+                        if (temp == dgv_data.Rows.Count - 1)
+                        {
+                            string mail = lb_mail.Text.Trim().ToLower().ToString();
+                            MessageBox.Show("Lập phiếu nhập " + id + " thành công!", "", MessageBoxButtons.OK);
+                            Update_PriceTotal(id);
+                            Form_InputProduct_Load(sender, e);
                         }
                         else
                         {
-                            MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Cảnh báo", MessageBoxButtons.OK);
+                            for (int j = 0; j < dgv_data.Rows.Count - 1; j++)
+                            {
+                                string idproduct = dgv_data.Rows[j].Cells[1].Value.ToString();
+                                int quantity = Convert.ToInt32(dgv_data.Rows[j].Cells[4].Value);
+
+                                Product_DeleteInventory(idproduct, quantity);
+
+                            }
+                            MessageBox.Show("Lập phiếu nhập " + id + " thất bại! Vui lòng thử lại sau.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Delete_Input(id);
+                            Delete_InputInfor(id);
                         }
                     }
-                    catch { }
-                }                
+                    else
+                    {
+                        MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Cảnh báo", MessageBoxButtons.OK);
+                    }
+                }
+                catch { }
+
             }
             else
             {
