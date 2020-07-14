@@ -31,73 +31,72 @@ namespace QuanLyKho
             newForm.Show();
         }
 
+        private DataTable Supplier_Infor(string TaxCode)
+        {
+            string query = "exec supplier_infor @TaxCode ";
+            return DataProvider.Instance.ExcuteQuery(query,
+                new object[] { TaxCode });
+        }
         #endregion
         private void Form_ListInput_Load(object sender, EventArgs e)
         {
-            grb_supplier.Enabled = false;
-            panel_id.Enabled = false;
             panel_show.Visible = false;
-            txt_IdInput.Enabled = false;
 
-            btn_change.Visible = false;
-            btn_save.Visible = false;
-            btn_cancel.Visible = false;
+            btn_delete.Visible = false;
             btn_show.Visible = false;
-
-            dgv_data.Enabled = true;
 
             dgv_data.AutoGenerateColumns = false;
             dgv_data.Enabled = true;
-            dgv_data.DataSource = DataProvider.Instance.ExcuteQuery("exec product_listinfor", new object[] { });
+            dgv_data.DataSource = DataProvider.Instance.ExcuteQuery("exec input_listinfor", new object[] { });
 
-            cbb_taxcode.DataSource = DataProvider.Instance.ExcuteQuery("select * from Supplier");
-            cbb_taxcode.DisplayMember = "TaxCode";
-            cbb_taxcode.ValueMember = "TaxCode";
-            cbb_taxcode.Text = "";
-
+            lb_codetax.Text = "";
             lb_supplier.Text = "";
             lb_phone.Text = "";
             lb_mail.Text = "";
-            lb_note.Text = "";
             lb_address.Text = "";
+            DateTime d = DateTime.Now;
+            dateTimePicker2.Value = new DateTime(d.Year, d.Month, 1);
+            dateTimePicker1.Value = dateTimePicker2.Value.AddMonths(1).AddDays(-1);
         }
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (panel_show.Visible == true)
+            {
+                panel_show.Visible = false;
+                Form_ListInput_Load(sender, e);
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
-        private void btn_change_Click(object sender, EventArgs e)
+        private void dgv_data_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            grb_supplier.Enabled = true;
-            panel_id.Enabled = true;
-            dgv_data.Enabled = false;
-
-            btn_change.Enabled = false;
-            btn_save.Visible = true;
-            btn_cancel.Visible = true;
-            btn_show.Visible = false;
+            for (int j = 0; j < dgv_data.Rows.Count - 1; j++)
+            {
+                dgv_data.Rows[j].Cells[0].Value = j + 1;
+            }
         }
 
         private void dgv_data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btn_change.Visible = true;
+            btn_delete.Visible = true;
             btn_show.Visible = true;
             int i = dgv_data.CurrentRow.Index;
-
-
-        }
-
-        private void btn_cancel_Click(object sender, EventArgs e)
-        {
-            Form_ListInput_Load(sender, e);
+            IdInput = dgv_data.Rows[i].Cells[1].Value.ToString();       
         }
 
         private void btn_show_Click(object sender, EventArgs e)
         {
             panel_show.Visible = true;
             openNewForm(new Form_InputProduct());
-            panel_show.Visible = false;
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

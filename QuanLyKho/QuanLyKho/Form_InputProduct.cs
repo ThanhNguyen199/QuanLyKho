@@ -24,10 +24,10 @@ namespace QuanLyKho
                 new object[] { IdProduct });
         }
 
-        public bool InsertInput(string Id, DateTime date)
+        public bool InsertInput(string Id, DateTime date,string name)
         {
-            string query = "exec input_insert @Id , @DateInput ";
-            return DataProvider.Instance.ExcuteNunQuery(query, new object[] { Id, date }) > 0;
+            string query = "exec input_insert @Id , @DateInput , @IdUser ";
+            return DataProvider.Instance.ExcuteNunQuery(query, new object[] { Id, date, name }) > 0;
         }
 
         public bool Insert_InputInfor(string IdInput, string IdProduct, string IdSupplier, int Quantity, float Price)
@@ -85,6 +85,11 @@ namespace QuanLyKho
             cbb_taxcode.ValueMember = "TaxCode";
             cbb_taxcode.Text = "";
 
+            cbb_user.DataSource = DataProvider.Instance.ExcuteQuery("select * from Users");
+            cbb_user.DisplayMember = "DisplayName";
+            cbb_user.ValueMember = "UserName";
+            cbb_user.Text = "";
+
             lb_supplier.Text = "";
             lb_phone.Text = "";
             lb_mail.Text = "";
@@ -134,7 +139,7 @@ namespace QuanLyKho
                 {
                     try
                     {
-                        if (InsertInput(id, date))
+                        if (InsertInput(id, date, cbb_user.SelectedValue.ToString()))
                         {
                             int temp = 0;
                             for (int j = 0; j < dgv_data.Rows.Count - 1; j++)
@@ -181,13 +186,13 @@ namespace QuanLyKho
         {
             string query = "select * from Supplier where TaxCode = N'" + cbb_taxcode.Text + "'";
             DataTable dt = DataProvider.Instance.ExcuteQuery(query);
-            foreach (DataRow row in dt.Rows)
+            foreach (DataRow r in dt.Rows)
             {
-                lb_supplier.Text = row["DisplayName"].ToString();
-                lb_phone.Text = row["Phone"].ToString();
-                lb_mail.Text = row["Email"].ToString();
-                lb_note.Text = row["MoreInfo"].ToString();
-                lb_address.Text = row["Address"].ToString();
+                lb_supplier.Text = r["DisplayName"].ToString();
+                lb_phone.Text = r["Phone"].ToString();
+                lb_mail.Text = r["Email"].ToString();
+                lb_note.Text = r["MoreInfo"].ToString();
+                lb_address.Text = r["Address"].ToString();
             }
         }
         int row;
@@ -219,97 +224,7 @@ namespace QuanLyKho
         }
         #endregion
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void grb_supplier_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lb_mail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lb_note_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lb_supplier_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lb_address_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lb_phone_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_add_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void txt_IdInput_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgv_data_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
