@@ -97,10 +97,5 @@ namespace QuanLyKho
                 MessageBox.Show("Thay đổi thất bại!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
-
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

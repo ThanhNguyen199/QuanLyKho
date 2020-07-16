@@ -16,12 +16,33 @@ namespace QuanLyKho
         {
             InitializeComponent();
         }
+        public static string IdSupplier;
         #region funtion
+        private Form activeForm = null;
+        private void openNewForm(Form newForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = newForm;
+            newForm.TopLevel = false;
+            newForm.Dock = DockStyle.Fill;
+            panel_show.Controls.Add(newForm);
+            newForm.BringToFront();
+            newForm.Show();
+        }
+
         private DataTable Product_Infor(string IdProduct)
         {
             string query = "exec product_infor @IdProduct ";
             return DataProvider.Instance.ExcuteQuery(query,
                 new object[] { IdProduct });
+        }
+
+        private DataTable Product(string taxcode)
+        {
+            string query = "exec product_inforofsupplier @Idsupplier ";
+            return DataProvider.Instance.ExcuteQuery(query,
+                new object[] { taxcode });
         }
 
         public bool InsertInput(string Id, DateTime date, string name, string IdSupplier)
@@ -72,7 +93,18 @@ namespace QuanLyKho
         #region load
         private void btn_close_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (panel_show.Visible == true)
+            {
+                panel_show.Visible = false;
+
+                name.DataSource = Product(cbb_taxcode.Text);
+                name.ValueMember = "Id";
+                name.DisplayMember = "DisplayName";
+            }
+            else
+            {
+                this.Close();
+            }
         }
 
         private void Form_InputProduct_Load(object sender, EventArgs e)
@@ -81,19 +113,16 @@ namespace QuanLyKho
             {
                 dgv_data.Rows.Clear();
             }
+            panel_show.Visible = false;
             grb_supplier.Enabled = false;
             panel_add.Visible = false;
 
             btn_save.Visible = false;
             btn_cancel.Visible = false;
+            btn_addproduct.Visible = false;
             btn_add.Enabled = true;
             dgv_data.Enabled = false;
-
-            name.DataSource = DataProvider.Instance.ExcuteQuery("select * from Product");
-            name.ValueMember = "Id";
-            name.DisplayMember = "DisplayName";
-
-
+            
             cbb_taxcode.DataSource = DataProvider.Instance.ExcuteQuery("select * from Supplier");
             cbb_taxcode.DisplayMember = "TaxCode";
             cbb_taxcode.ValueMember = "TaxCode";
@@ -126,11 +155,12 @@ namespace QuanLyKho
 
             panel_add.Visible = true;
             grb_supplier.Enabled = true;
+            dgv_data.Enabled = false;
 
             btn_save.Visible = true;
             btn_cancel.Visible = true;
+            btn_addproduct.Visible = true;
             btn_add.Enabled = false;
-            dgv_data.Enabled = true;
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
@@ -212,6 +242,11 @@ namespace QuanLyKho
                 lb_note.Text = r["MoreInfo"].ToString();
                 lb_address.Text = r["Address"].ToString();
             }
+            IdSupplier = cbb_taxcode.Text;
+            dgv_data.Enabled = true;
+            name.DataSource = Product(cbb_taxcode.Text);
+            name.ValueMember = "Id";
+            name.DisplayMember = "DisplayName";
         }
         int row;
         decimal sum_price;
@@ -222,29 +257,43 @@ namespace QuanLyKho
 
         private void dgv_data_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            for (int i = 0; i < dgv_data.Rows.Count - 1; i++)
-            {
-                dgv_data.Rows[i].Cells[0].Value = i + 1;
-            }
-            try
-            {
-                DataTable dt = Product_Infor(dgv_data.Rows[row].Cells[1].Value.ToString());
-                foreach (DataRow r in dt.Rows)
+            
+                for (int i = 0; i < dgv_data.Rows.Count - 1; i++)
                 {
-                    dgv_data.Rows[row].Cells[2].Value = r["unit"].ToString();
-                    dgv_data.Rows[row].Cells[3].Value = r["Price"].ToString();
+                    dgv_data.Rows[i].Cells[0].Value = i + 1;
                 }
+                try
+                {
+                    DataTable dt = Product_Infor(dgv_data.Rows[row].Cells[1].Value.ToString());
+                    foreach (DataRow r in dt.Rows)
+                    {
+                        dgv_data.Rows[row].Cells[2].Value = r["unit"].ToString();
+                        dgv_data.Rows[row].Cells[3].Value = r["Price"].ToString();
+                    }
 
-                dgv_data.Rows[row].Cells[5].Value = Convert.ToDouble(dgv_data.Rows[row].Cells[3].Value) * Convert.ToDouble(dgv_data.Rows[row].Cells[4].Value);
-                sum_price += (decimal)Convert.ToDouble(dgv_data.Rows[row].Cells[5].Value);
-            }
-            catch { }
+                    dgv_data.Rows[row].Cells[5].Value = Convert.ToDouble(dgv_data.Rows[row].Cells[3].Value) * Convert.ToDouble(dgv_data.Rows[row].Cells[4].Value);
+                    sum_price += (decimal)Convert.ToDouble(dgv_data.Rows[row].Cells[5].Value);
+                }
+                catch { }
         }
         #endregion
 
         private void txt_IdInput_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(cbb_taxcode.Text != "")
+            {
+                panel_show.Visible = true;
+                openNewForm(new Form_ProductInfor());
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn nhà cung cấp","Cảnh báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
     }
 }

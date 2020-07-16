@@ -35,7 +35,6 @@
             this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton4 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel_btn3 = new System.Windows.Forms.Panel();
-            this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -46,7 +45,6 @@
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel_btn1 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -139,7 +137,7 @@
             this.bunifuFlatButton6.IconVisible = true;
             this.bunifuFlatButton6.IconZoom = 80D;
             this.bunifuFlatButton6.IsTab = false;
-            this.bunifuFlatButton6.Location = new System.Drawing.Point(0, 502);
+            this.bunifuFlatButton6.Location = new System.Drawing.Point(0, 441);
             this.bunifuFlatButton6.Name = "bunifuFlatButton6";
             this.bunifuFlatButton6.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton6.OnHovercolor = System.Drawing.Color.Transparent;
@@ -176,7 +174,7 @@
             this.bunifuFlatButton4.IconVisible = true;
             this.bunifuFlatButton4.IconZoom = 80D;
             this.bunifuFlatButton4.IsTab = false;
-            this.bunifuFlatButton4.Location = new System.Drawing.Point(0, 454);
+            this.bunifuFlatButton4.Location = new System.Drawing.Point(0, 393);
             this.bunifuFlatButton4.Name = "bunifuFlatButton4";
             this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.Transparent;
@@ -193,32 +191,14 @@
             // panel_btn3
             // 
             this.panel_btn3.BackColor = System.Drawing.Color.Transparent;
-            this.panel_btn3.Controls.Add(this.button13);
             this.panel_btn3.Controls.Add(this.button14);
             this.panel_btn3.Controls.Add(this.button15);
             this.panel_btn3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_btn3.ForeColor = System.Drawing.Color.Transparent;
-            this.panel_btn3.Location = new System.Drawing.Point(0, 359);
+            this.panel_btn3.Location = new System.Drawing.Point(0, 329);
             this.panel_btn3.Name = "panel_btn3";
-            this.panel_btn3.Size = new System.Drawing.Size(200, 95);
+            this.panel_btn3.Size = new System.Drawing.Size(200, 64);
             this.panel_btn3.TabIndex = 10;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.Transparent;
-            this.button13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.ForeColor = System.Drawing.Color.Black;
-            this.button13.Location = new System.Drawing.Point(0, 60);
-            this.button13.Name = "button13";
-            this.button13.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.button13.Size = new System.Drawing.Size(200, 30);
-            this.button13.TabIndex = 2;
-            this.button13.Text = "Nhóm sản phẩm";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button14
             // 
@@ -277,7 +257,7 @@
             this.bunifuFlatButton3.IconVisible = true;
             this.bunifuFlatButton3.IconZoom = 100D;
             this.bunifuFlatButton3.IsTab = false;
-            this.bunifuFlatButton3.Location = new System.Drawing.Point(0, 311);
+            this.bunifuFlatButton3.Location = new System.Drawing.Point(0, 281);
             this.bunifuFlatButton3.Name = "bunifuFlatButton3";
             this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.Transparent;
@@ -299,7 +279,7 @@
             this.panel_btn2.Controls.Add(this.button7);
             this.panel_btn2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_btn2.ForeColor = System.Drawing.Color.Transparent;
-            this.panel_btn2.Location = new System.Drawing.Point(0, 216);
+            this.panel_btn2.Location = new System.Drawing.Point(0, 186);
             this.panel_btn2.Name = "panel_btn2";
             this.panel_btn2.Size = new System.Drawing.Size(200, 95);
             this.panel_btn2.TabIndex = 6;
@@ -378,7 +358,7 @@
             this.bunifuFlatButton2.IconVisible = true;
             this.bunifuFlatButton2.IconZoom = 80D;
             this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(0, 168);
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(0, 138);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.Transparent;
@@ -396,7 +376,6 @@
             // 
             this.panel_btn1.BackColor = System.Drawing.Color.Transparent;
             this.panel_btn1.Controls.Add(this.button9);
-            this.panel_btn1.Controls.Add(this.button4);
             this.panel_btn1.Controls.Add(this.button3);
             this.panel_btn1.Controls.Add(this.button2);
             this.panel_btn1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -404,7 +383,7 @@
             this.panel_btn1.ForeColor = System.Drawing.Color.Transparent;
             this.panel_btn1.Location = new System.Drawing.Point(0, 48);
             this.panel_btn1.Name = "panel_btn1";
-            this.panel_btn1.Size = new System.Drawing.Size(200, 120);
+            this.panel_btn1.Size = new System.Drawing.Size(200, 90);
             this.panel_btn1.TabIndex = 3;
             // 
             // button9
@@ -413,7 +392,7 @@
             this.button9.FlatAppearance.BorderSize = 0;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(0, 90);
+            this.button9.Location = new System.Drawing.Point(0, 60);
             this.button9.Name = "button9";
             this.button9.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
             this.button9.Size = new System.Drawing.Size(200, 30);
@@ -422,22 +401,6 @@
             this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(0, 60);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(200, 30);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Kiểm kê";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -682,7 +645,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
         private System.Windows.Forms.Panel panel_btn1;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
@@ -691,7 +653,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel_btn3;
-        private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton4;

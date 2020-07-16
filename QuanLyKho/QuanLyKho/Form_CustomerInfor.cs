@@ -64,7 +64,7 @@ namespace QuanLyKho
             }
 
             btn_add.Enabled = true;
-            btn_change.Enabled = true;
+            btn_change.Enabled = false;
             btn_save.Enabled = false;
             btn_cancel.Enabled = false;
 
@@ -190,6 +190,8 @@ namespace QuanLyKho
 
         private void dgv_data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            btn_change.Enabled = true;
+
             int i = dgv_data.CurrentRow.Index;
             lb_id.Text = dgv_data.Rows[i].Cells[1].Value.ToString();
             txt_taxcode.Text = dgv_data.Rows[i].Cells[2].Value.ToString();

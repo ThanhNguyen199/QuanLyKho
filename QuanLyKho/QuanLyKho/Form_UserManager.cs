@@ -33,10 +33,6 @@ namespace QuanLyKho
         }
         #endregion
         #region load
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         int chon;
         private void form_UserManager_Load(object sender, EventArgs e)
         {

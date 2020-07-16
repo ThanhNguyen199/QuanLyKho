@@ -179,6 +179,8 @@ namespace QuanLyKho
             string query = "select IdRole from Users where UserName = N'" + Form_Login.userlogin + "'";
             if (DataProvider.Instance.ExcuteScalar(query).ToString() == "KETOAN" || DataProvider.Instance.ExcuteScalar(query).ToString() == "VANCHUYEN")
             {
+                bunifuFlatButton1.Visible = false;
+                button5.Visible = false;
                 bunifuFlatButton4.Visible = false;
             }
         }

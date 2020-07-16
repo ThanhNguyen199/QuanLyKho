@@ -77,6 +77,13 @@ namespace QuanLyKho
         {
             btn_delete.Visible = true;
             btn_show.Visible = true;
+
+            string query = "select IdRole from Users where UserName = N'" + Form_Login.userlogin + "'";
+            if (DataProvider.Instance.ExcuteScalar(query).ToString() == "VANCHUYEN")
+            {
+                btn_delete.Visible = false;
+            }
+
             int i = dgv_data.CurrentRow.Index;
             IdInput = dgv_data.Rows[i].Cells[1].Value.ToString();       
         }

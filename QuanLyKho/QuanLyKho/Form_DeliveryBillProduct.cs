@@ -24,10 +24,17 @@ namespace QuanLyKho
                 new object[] { IdProduct });
         }
 
-        public bool DeliveryBill_Insert(string IdDelivery, DateTime date, string IdCustomer, string username)
+        private DataTable product(string taxcode)
         {
-            string query = "exec deliverybill_insert @IdDelivery , @DateOutput , @IdCustomer , @IdUser ";
-            return DataProvider.Instance.ExcuteNunQuery(query, new object[] { IdDelivery, date, IdCustomer, username }) > 0;
+            string query = "exec product_inforofsupplier @Idsupplier ";
+            return DataProvider.Instance.ExcuteQuery(query,
+                new object[] { taxcode });
+        }
+
+        public bool DeliveryBill_Insert(string IdDelivery, DateTime date, string username, string IdCustomer, string Idsupplier)
+        {
+            string query = "exec deliverybill_insert @IdDelivery , @DateOutput , @IdUser , @IdCustomer , @Idsupplier ";
+            return DataProvider.Instance.ExcuteNunQuery(query, new object[] { IdDelivery, date, username, IdCustomer,  Idsupplier }) > 0;
         }
 
         public bool DeliveryBillInfor_Insert(string IdDelivery, string IdProduct, int QuantityOut, float Price)
@@ -81,6 +88,7 @@ namespace QuanLyKho
                 dgv_data.Rows.Clear();
             }
             grb_customer.Enabled = false;
+            grb_supplier.Enabled = false;
             panel_add.Visible = false;
 
             btn_add.Enabled = true;
@@ -88,9 +96,10 @@ namespace QuanLyKho
             btn_cancel.Visible = false;
             dgv_data.Enabled = false;
 
-            name.DataSource = DataProvider.Instance.ExcuteQuery("select * from Product");
-            name.ValueMember = "Id";
-            name.DisplayMember = "DisplayName";
+            cbb_taxcode.DataSource = DataProvider.Instance.ExcuteQuery("select * from Supplier");
+            cbb_taxcode.DisplayMember = "TaxCode";
+            cbb_taxcode.ValueMember = "TaxCode";
+            cbb_taxcode.Text = "";
 
             cbb_cusId.DataSource = DataProvider.Instance.ExcuteQuery("select * from Customer");
             cbb_cusId.DisplayMember = "Id";
@@ -127,11 +136,12 @@ namespace QuanLyKho
 
             panel_add.Visible = true;
             grb_customer.Enabled = true;
+            grb_supplier.Enabled = true;
 
             btn_save.Visible = true;
             btn_cancel.Visible = true;
             btn_add.Enabled = false;
-            dgv_data.Enabled = true;
+            dgv_data.Enabled = false;
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
@@ -145,7 +155,8 @@ namespace QuanLyKho
             {
                 string id = lb_IdDelivery.Text;
                 DateTime date = dateTimePicker1.Value;
-                string idsupplier = cbb_cusId.SelectedValue.ToString();
+                string idcustomer = cbb_cusId.SelectedValue.ToString();
+                string idsupplier = cbb_taxcode.SelectedValue.ToString();
                 string useroutput = cbb_user.SelectedValue.ToString();
                 
                 int tam = 0;
@@ -163,7 +174,7 @@ namespace QuanLyKho
                 {
                     try
                     {
-                        if (DeliveryBill_Insert(id, date, useroutput, idsupplier))
+                        if (DeliveryBill_Insert(id, date, useroutput, idcustomer, idsupplier))
                         {
                             int temp = 0;
                             for (int j = 0; j < dgv_data.Rows.Count - 1; j++)
@@ -258,6 +269,22 @@ namespace QuanLyKho
                 sum_price += (decimal)Convert.ToDouble(dgv_data.Rows[row].Cells[6].Value);
             }
             catch { }
+        }
+
+        private void cbb_taxcode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgv_data.Enabled = true;
+
+            string query = "select * from Supplier where TaxCode = N'" + cbb_taxcode.Text + "'";
+            DataTable dt = DataProvider.Instance.ExcuteQuery(query);
+            foreach (DataRow r in dt.Rows)
+            {
+                lb_supplier.Text = r["DisplayName"].ToString();
+            }
+
+            name.DataSource = product(cbb_taxcode.Text);
+            name.ValueMember = "Id";
+            name.DisplayMember = "DisplayName";
         }
     }
     #endregion

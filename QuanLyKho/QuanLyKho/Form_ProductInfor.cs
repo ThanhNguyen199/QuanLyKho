@@ -19,6 +19,14 @@ namespace QuanLyKho
         }
         int chon;
         int chonanh;
+
+        private DataTable product(string taxcode)
+        {
+            string query = "exec product_inforofsupplier @Idsupplier ";
+            return DataProvider.Instance.ExcuteQuery(query,
+                new object[] { taxcode });
+        }
+
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -39,16 +47,6 @@ namespace QuanLyKho
             txt_from.Enabled = false;
             chonanh = 0;
 
-            string query = "select IdRole from Users where UserName = N'" + Form_Login.userlogin + "'";
-            if (DataProvider.Instance.ExcuteScalar(query).ToString() == "VANCHUYEN")
-            {
-                btn_add.Visible = false;
-                btn_change.Visible = false;
-                btn_save.Visible = false;
-                btn_cancel.Visible = false;
-                btn_choose.Visible = false;
-            }
-
             btn_add.Enabled = true;
             btn_change.Enabled = false;
             btn_save.Enabled = false;
@@ -67,7 +65,7 @@ namespace QuanLyKho
 
             dgv_data.AutoGenerateColumns = false;
             dgv_data.Enabled = true;
-            dgv_data.DataSource = DataProvider.Instance.ExcuteQuery("exec product_listinfor", new object[] { });
+            dgv_data.DataSource = product(Form_InputProduct.IdSupplier);
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -139,9 +137,9 @@ namespace QuanLyKho
                     else
                     {
                         string query = "exec product_insert @Id , @IdCategory , @DisplayName , @Inventory " +
-                        ", @IdUnit , @Price , @Froms , @Images ";
+                        ", @IdUnit , @Price , @Froms , @Images , @IdSuppiler ";
                         if (DataProvider.Instance.ExcuteNunQuery(query,
-                            new object[] { id, loai, name, 0, unit, price, from, imageData }) > 0)
+                            new object[] { id, loai, name, 0, unit, price, from, imageData, Form_InputProduct.IdSupplier }) > 0)
                         {
                             MessageBox.Show("Thêm thành công!", "Thông báo", MessageBoxButtons.OK);
                             Form_ProductInfor_Load(sender, e);

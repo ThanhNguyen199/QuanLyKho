@@ -14,11 +14,12 @@ namespace QuanLyKho
         [STAThread]
         static void Main()
         {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                //Application.Run(new Form_Login());
-                //Application.Run(new Form_ListInput());
-                Application.Run(new Form_ListInventory());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form_Login());
+            //Application.Run(new Form_InputProduct());
+            //Application.Run(new Form_ListInventory());
+            //Application.Run(new Form_DeliveryBillProduct());
         }
     }
 }
