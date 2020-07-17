@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_close = new System.Windows.Forms.Button();
             this.txt10 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt9 = new System.Windows.Forms.TextBox();
@@ -46,7 +45,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_change = new System.Windows.Forms.Panel();
-            this.btn_picture = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_change = new System.Windows.Forms.Button();
@@ -59,20 +57,6 @@
             this.panel_change.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_close
-            // 
-            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            this.btn_close.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_close.Location = new System.Drawing.Point(595, 25);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(80, 25);
-            this.btn_close.TabIndex = 0;
-            this.btn_close.Text = "Đóng";
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.button1_Click);
             // 
             // txt10
             // 
@@ -216,6 +200,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BackgroundImage = global::QuanLyKho.Properties.Resources.Logo1;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -230,25 +215,12 @@
             // panel_change
             // 
             this.panel_change.BackColor = System.Drawing.Color.Transparent;
-            this.panel_change.Controls.Add(this.btn_picture);
             this.panel_change.Controls.Add(this.btn_cancel);
             this.panel_change.Controls.Add(this.btn_save);
             this.panel_change.Location = new System.Drawing.Point(251, 476);
             this.panel_change.Name = "panel_change";
             this.panel_change.Size = new System.Drawing.Size(305, 30);
             this.panel_change.TabIndex = 50;
-            // 
-            // btn_picture
-            // 
-            this.btn_picture.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            this.btn_picture.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            this.btn_picture.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_picture.Location = new System.Drawing.Point(208, 0);
-            this.btn_picture.Name = "btn_picture";
-            this.btn_picture.Size = new System.Drawing.Size(80, 30);
-            this.btn_picture.TabIndex = 22;
-            this.btn_picture.Text = "Chọn ảnh";
-            this.btn_picture.UseVisualStyleBackColor = true;
             // 
             // btn_cancel
             // 
@@ -294,6 +266,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(401, 79);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(225, 300);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 51;
             this.pictureBox2.TabStop = false;
             // 
@@ -368,7 +341,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_UserInfor";
@@ -384,8 +356,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.TextBox txt10;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt9;
@@ -408,7 +378,6 @@
         private System.Windows.Forms.Button btn_change;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button btn_picture;
         private System.Windows.Forms.Button btn_changepass;
         private System.Windows.Forms.Label lb_1;
         private System.Windows.Forms.Label lb_2;

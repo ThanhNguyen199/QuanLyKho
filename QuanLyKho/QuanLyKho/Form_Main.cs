@@ -76,11 +76,6 @@ namespace QuanLyKho
             hideSubMenu();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            hideSubMenu();
-        }
-
         private void button9_Click(object sender, EventArgs e)
         {
             openNewForm(new Form_ListInventory());
@@ -107,6 +102,7 @@ namespace QuanLyKho
 
         private void button5_Click(object sender, EventArgs e)
         {
+            openNewForm(new Form_Product());
             hideSubMenu();
         }
         #endregion

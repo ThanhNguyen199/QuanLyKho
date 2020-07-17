@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label11 = new System.Windows.Forms.Label();
             this.dgv_data = new System.Windows.Forms.DataGridView();
             this.lb_price = new System.Windows.Forms.Label();
@@ -55,7 +54,6 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateinput = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.matax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +75,8 @@
             // 
             // dgv_data
             // 
+            this.dgv_data.AllowUserToResizeColumns = false;
+            this.dgv_data.AllowUserToResizeRows = false;
             this.dgv_data.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -93,31 +93,30 @@
             this.dgv_data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stt,
             this.name,
-            this.dateinput,
             this.supplier,
             this.matax,
             this.price,
             this.quantity,
             this.sumprice});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_data.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_data.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
             this.dgv_data.Location = new System.Drawing.Point(25, 337);
             this.dgv_data.Name = "dgv_data";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_data.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_data.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_data.RowHeadersVisible = false;
             this.dgv_data.Size = new System.Drawing.Size(700, 200);
             this.dgv_data.TabIndex = 159;
@@ -328,45 +327,40 @@
             this.name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.name.Width = 190;
             // 
-            // dateinput
-            // 
-            this.dateinput.DataPropertyName = "DateInput";
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            this.dateinput.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dateinput.HeaderText = "Ngày nhập";
-            this.dateinput.Name = "dateinput";
-            // 
             // supplier
             // 
             this.supplier.DataPropertyName = "namesupplier";
             this.supplier.HeaderText = "Nhà cung cấp";
             this.supplier.Name = "supplier";
+            this.supplier.Width = 250;
             // 
             // matax
             // 
             this.matax.DataPropertyName = "unit";
             this.matax.HeaderText = "Đơn vị tính";
             this.matax.Name = "matax";
+            this.matax.Width = 70;
             // 
             // price
             // 
             this.price.DataPropertyName = "Price";
-            dataGridViewCellStyle3.Format = "N0";
-            this.price.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Format = "N0";
+            this.price.DefaultCellStyle = dataGridViewCellStyle2;
             this.price.HeaderText = "Giá";
             this.price.Name = "price";
             // 
             // quantity
             // 
-            this.quantity.DataPropertyName = "Quantity";
+            this.quantity.DataPropertyName = "Inventory";
             this.quantity.HeaderText = "Số lượng";
             this.quantity.Name = "quantity";
+            this.quantity.Width = 60;
             // 
             // sumprice
             // 
-            this.sumprice.DataPropertyName = "Prices";
-            dataGridViewCellStyle4.Format = "N0";
-            this.sumprice.DefaultCellStyle = dataGridViewCellStyle4;
+            this.sumprice.DataPropertyName = "PriceTotal";
+            dataGridViewCellStyle3.Format = "N0";
+            this.sumprice.DefaultCellStyle = dataGridViewCellStyle3;
             this.sumprice.HeaderText = "Giá trị đơn hàng";
             this.sumprice.Name = "sumprice";
             this.sumprice.Width = 130;
@@ -418,7 +412,6 @@
         private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateinput;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn matax;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;

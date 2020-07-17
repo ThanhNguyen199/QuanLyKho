@@ -93,36 +93,18 @@ namespace QuanLyKho
         #region load
         private void btn_close_Click(object sender, EventArgs e)
         {
-            if (panel_show.Visible == true)
-            {
-                panel_show.Visible = false;
+            panel_show.Visible = false;
+            btn_close.Visible = false;
 
-                name.DataSource = Product(cbb_taxcode.Text);
-                name.ValueMember = "Id";
-                name.DisplayMember = "DisplayName";
-            }
-            else
-            {
-                this.Close();
-            }
+            label11.Text = "Nhập kho";
+
+            name.DataSource = Product(cbb_taxcode.Text);
+            name.ValueMember = "Id";
+            name.DisplayMember = "DisplayName";
         }
 
         private void Form_InputProduct_Load(object sender, EventArgs e)
         {
-            while (dgv_data.Rows.Count > 1)
-            {
-                dgv_data.Rows.Clear();
-            }
-            panel_show.Visible = false;
-            grb_supplier.Enabled = false;
-            panel_add.Visible = false;
-
-            btn_save.Visible = false;
-            btn_cancel.Visible = false;
-            btn_addproduct.Visible = false;
-            btn_add.Enabled = true;
-            dgv_data.Enabled = false;
-            
             cbb_taxcode.DataSource = DataProvider.Instance.ExcuteQuery("select * from Supplier");
             cbb_taxcode.DisplayMember = "TaxCode";
             cbb_taxcode.ValueMember = "TaxCode";
@@ -132,6 +114,22 @@ namespace QuanLyKho
             cbb_user.DisplayMember = "DisplayName";
             cbb_user.ValueMember = "UserName";
             cbb_user.Text = "";
+
+            while (dgv_data.Rows.Count > 1)
+            {
+                dgv_data.Rows.Clear();
+            }
+
+            panel_show.Visible = false;
+            grb_supplier.Enabled = false;
+            panel_add.Visible = false;
+
+            btn_save.Visible = false;
+            btn_cancel.Visible = false;
+            btn_addproduct.Visible = false;
+            btn_close.Visible = false;
+            btn_add.Visible = true;
+            dgv_data.Enabled = false;
 
             lb_supplier.Text = "";
             lb_phone.Text = "";
@@ -155,11 +153,9 @@ namespace QuanLyKho
 
             panel_add.Visible = true;
             grb_supplier.Enabled = true;
-            dgv_data.Enabled = false;
 
             btn_save.Visible = true;
             btn_cancel.Visible = true;
-            btn_addproduct.Visible = true;
             btn_add.Enabled = false;
         }
 
@@ -242,8 +238,10 @@ namespace QuanLyKho
                 lb_note.Text = r["MoreInfo"].ToString();
                 lb_address.Text = r["Address"].ToString();
             }
-            IdSupplier = cbb_taxcode.Text;
             dgv_data.Enabled = true;
+            btn_addproduct.Visible = true;
+
+            IdSupplier = cbb_taxcode.Text;
             name.DataSource = Product(cbb_taxcode.Text);
             name.ValueMember = "Id";
             name.DisplayMember = "DisplayName";
@@ -257,24 +255,24 @@ namespace QuanLyKho
 
         private void dgv_data_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            
-                for (int i = 0; i < dgv_data.Rows.Count - 1; i++)
-                {
-                    dgv_data.Rows[i].Cells[0].Value = i + 1;
-                }
-                try
-                {
-                    DataTable dt = Product_Infor(dgv_data.Rows[row].Cells[1].Value.ToString());
-                    foreach (DataRow r in dt.Rows)
-                    {
-                        dgv_data.Rows[row].Cells[2].Value = r["unit"].ToString();
-                        dgv_data.Rows[row].Cells[3].Value = r["Price"].ToString();
-                    }
 
-                    dgv_data.Rows[row].Cells[5].Value = Convert.ToDouble(dgv_data.Rows[row].Cells[3].Value) * Convert.ToDouble(dgv_data.Rows[row].Cells[4].Value);
-                    sum_price += (decimal)Convert.ToDouble(dgv_data.Rows[row].Cells[5].Value);
+            for (int i = 0; i < dgv_data.Rows.Count - 1; i++)
+            {
+                dgv_data.Rows[i].Cells[0].Value = i + 1;
+            }
+            try
+            {
+                DataTable dt = Product_Infor(dgv_data.Rows[row].Cells[1].Value.ToString());
+                foreach (DataRow r in dt.Rows)
+                {
+                    dgv_data.Rows[row].Cells[2].Value = r["unit"].ToString();
+                    dgv_data.Rows[row].Cells[3].Value = r["Price"].ToString();
                 }
-                catch { }
+
+                dgv_data.Rows[row].Cells[5].Value = Convert.ToDouble(dgv_data.Rows[row].Cells[3].Value) * Convert.ToDouble(dgv_data.Rows[row].Cells[4].Value);
+                sum_price += (decimal)Convert.ToDouble(dgv_data.Rows[row].Cells[5].Value);
+            }
+            catch { }
         }
         #endregion
 
@@ -283,17 +281,12 @@ namespace QuanLyKho
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_addproduct_Click(object sender, EventArgs e)
         {
-            if(cbb_taxcode.Text != "")
-            {
-                panel_show.Visible = true;
-                openNewForm(new Form_ProductInfor());
-            }
-            else
-            {
-                MessageBox.Show("Hãy chọn nhà cung cấp","Cảnh báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
+            panel_show.Visible = true;
+            btn_close.Visible = true;
+            label11.Text = "Nhập sản phẩm mới";
+            openNewForm(new Form_ProductInfor());
         }
     }
 }

@@ -39,7 +39,6 @@
             this.button15 = new System.Windows.Forms.Button();
             this.bunifuFlatButton3 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel_btn2 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -53,6 +52,7 @@
             this.btn_logout = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btn_exit = new Bunifu.Framework.UI.BunifuFlatButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel_menu.SuspendLayout();
@@ -137,7 +137,7 @@
             this.bunifuFlatButton6.IconVisible = true;
             this.bunifuFlatButton6.IconZoom = 80D;
             this.bunifuFlatButton6.IsTab = false;
-            this.bunifuFlatButton6.Location = new System.Drawing.Point(0, 441);
+            this.bunifuFlatButton6.Location = new System.Drawing.Point(0, 432);
             this.bunifuFlatButton6.Name = "bunifuFlatButton6";
             this.bunifuFlatButton6.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton6.OnHovercolor = System.Drawing.Color.Transparent;
@@ -174,7 +174,7 @@
             this.bunifuFlatButton4.IconVisible = true;
             this.bunifuFlatButton4.IconZoom = 80D;
             this.bunifuFlatButton4.IsTab = false;
-            this.bunifuFlatButton4.Location = new System.Drawing.Point(0, 393);
+            this.bunifuFlatButton4.Location = new System.Drawing.Point(0, 384);
             this.bunifuFlatButton4.Name = "bunifuFlatButton4";
             this.bunifuFlatButton4.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton4.OnHovercolor = System.Drawing.Color.Transparent;
@@ -195,9 +195,9 @@
             this.panel_btn3.Controls.Add(this.button15);
             this.panel_btn3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_btn3.ForeColor = System.Drawing.Color.Transparent;
-            this.panel_btn3.Location = new System.Drawing.Point(0, 329);
+            this.panel_btn3.Location = new System.Drawing.Point(0, 324);
             this.panel_btn3.Name = "panel_btn3";
-            this.panel_btn3.Size = new System.Drawing.Size(200, 64);
+            this.panel_btn3.Size = new System.Drawing.Size(200, 60);
             this.panel_btn3.TabIndex = 10;
             // 
             // button14
@@ -257,7 +257,7 @@
             this.bunifuFlatButton3.IconVisible = true;
             this.bunifuFlatButton3.IconZoom = 100D;
             this.bunifuFlatButton3.IsTab = false;
-            this.bunifuFlatButton3.Location = new System.Drawing.Point(0, 281);
+            this.bunifuFlatButton3.Location = new System.Drawing.Point(0, 276);
             this.bunifuFlatButton3.Name = "bunifuFlatButton3";
             this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.Transparent;
@@ -281,25 +281,8 @@
             this.panel_btn2.ForeColor = System.Drawing.Color.Transparent;
             this.panel_btn2.Location = new System.Drawing.Point(0, 186);
             this.panel_btn2.Name = "panel_btn2";
-            this.panel_btn2.Size = new System.Drawing.Size(200, 95);
+            this.panel_btn2.Size = new System.Drawing.Size(200, 90);
             this.panel_btn2.TabIndex = 6;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.Black;
-            this.button5.Location = new System.Drawing.Point(0, 60);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(200, 30);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Doanh thu";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -610,6 +593,23 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Quản lý kho hàng";
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.Black;
+            this.button5.Location = new System.Drawing.Point(0, 60);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(200, 30);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Sản phẩm";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -649,7 +649,6 @@
         private System.Windows.Forms.Button button2;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton3;
         private System.Windows.Forms.Panel panel_btn2;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel_btn3;
@@ -662,5 +661,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton btn_logout;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton5;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton6;
+        private System.Windows.Forms.Button button5;
     }
 }

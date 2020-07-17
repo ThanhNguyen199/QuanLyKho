@@ -95,11 +95,18 @@ namespace QuanLyKho
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            btn_cancel.Visible = true;
+            if (cbb_taxcode.Text != "")
+            {
+                btn_cancel.Visible = true;
 
-            dgv_data.AutoGenerateColumns = false;
-            dgv_data.Enabled = true;
-            dgv_data.DataSource = Product(cbb_taxcode.Text);
+                dgv_data.AutoGenerateColumns = false;
+                dgv_data.Enabled = true;
+                dgv_data.DataSource = Product(cbb_taxcode.Text);
+            }
+            else
+            {
+                MessageBox.Show("Chọn nhà cung cấp trước khi tìm kiếm", "Thông báo");
+            }
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)

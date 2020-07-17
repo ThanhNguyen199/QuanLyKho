@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel_list = new System.Windows.Forms.Panel();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_show = new System.Windows.Forms.Button();
             this.dgv_data = new System.Windows.Forms.DataGridView();
@@ -56,10 +57,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_close = new System.Windows.Forms.Button();
-            this.btn_delete = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.panel_show = new System.Windows.Forms.Panel();
-            this.btn_cancel = new System.Windows.Forms.Button();
             this.panel_list.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).BeginInit();
             this.panel_id.SuspendLayout();
@@ -73,12 +72,26 @@
             this.panel_list.Controls.Add(this.dgv_data);
             this.panel_list.Controls.Add(this.panel_id);
             this.panel_list.Controls.Add(this.btn_close);
-            this.panel_list.Controls.Add(this.btn_delete);
             this.panel_list.Controls.Add(this.label11);
             this.panel_list.Location = new System.Drawing.Point(0, 0);
             this.panel_list.Name = "panel_list";
             this.panel_list.Size = new System.Drawing.Size(750, 560);
             this.panel_list.TabIndex = 160;
+            // 
+            // btn_cancel
+            // 
+            this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
+            this.btn_cancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancel.Location = new System.Drawing.Point(633, 120);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(80, 30);
+            this.btn_cancel.TabIndex = 170;
+            this.btn_cancel.Text = "Huỷ";
+            this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // button1
             // 
@@ -102,7 +115,7 @@
             this.btn_show.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_show.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_show.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_show.Location = new System.Drawing.Point(633, 211);
+            this.btn_show.Location = new System.Drawing.Point(633, 158);
             this.btn_show.Name = "btn_show";
             this.btn_show.Size = new System.Drawing.Size(80, 30);
             this.btn_show.TabIndex = 168;
@@ -113,6 +126,8 @@
             // dgv_data
             // 
             this.dgv_data.AllowUserToDeleteRows = false;
+            this.dgv_data.AllowUserToResizeColumns = false;
+            this.dgv_data.AllowUserToResizeRows = false;
             this.dgv_data.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dgv_data.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -340,21 +355,6 @@
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
-            // btn_delete
-            // 
-            this.btn_delete.BackColor = System.Drawing.Color.Transparent;
-            this.btn_delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            this.btn_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_delete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_delete.Location = new System.Drawing.Point(633, 168);
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(80, 30);
-            this.btn_delete.TabIndex = 162;
-            this.btn_delete.Text = "Xoá";
-            this.btn_delete.UseVisualStyleBackColor = false;
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -372,29 +372,14 @@
             this.panel_show.Size = new System.Drawing.Size(750, 495);
             this.panel_show.TabIndex = 161;
             // 
-            // btn_cancel
-            // 
-            this.btn_cancel.BackColor = System.Drawing.Color.Transparent;
-            this.btn_cancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel.Location = new System.Drawing.Point(633, 125);
-            this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(80, 30);
-            this.btn_cancel.TabIndex = 170;
-            this.btn_cancel.Text = "Huỷ";
-            this.btn_cancel.UseVisualStyleBackColor = false;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
-            // 
             // Form_ListInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(750, 560);
-            this.Controls.Add(this.panel_list);
             this.Controls.Add(this.panel_show);
+            this.Controls.Add(this.panel_list);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_ListInput";
             this.Text = "Form_ListInput";
@@ -417,7 +402,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel_show;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;

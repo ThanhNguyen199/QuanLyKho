@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -81,6 +82,18 @@ namespace QuanLyKho
                 txt8.Text = row["Phone"].ToString();
                 txt9.Text = row["Email"].ToString();
                 txt10.Text = row["Address"].ToString();
+                string check = row["image"].ToString();
+                if (check != "")
+                {
+                    Byte[] image = (Byte[])row["image"]; ;
+                    MemoryStream ms = new MemoryStream(image);
+                    pictureBox2.Image = Image.FromStream(ms);
+                    ms.Close();
+                }
+                else
+                {
+                    pictureBox2.Image = null;
+                }
             }
         }
 

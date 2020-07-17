@@ -37,13 +37,6 @@
             this.panel_show = new System.Windows.Forms.Panel();
             this.panel_list = new System.Windows.Forms.Panel();
             this.btn_addproduct = new System.Windows.Forms.Button();
-            this.dgv_data = new System.Windows.Forms.DataGridView();
-            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.matax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sumprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_add = new System.Windows.Forms.Panel();
             this.lb_IdInput = new System.Windows.Forms.Label();
             this.cbb_user = new System.Windows.Forms.ComboBox();
@@ -69,10 +62,17 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
+            this.dgv_data = new System.Windows.Forms.DataGridView();
+            this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.matax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sumprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_list.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).BeginInit();
             this.panel_add.SuspendLayout();
             this.grb_supplier.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_show
@@ -85,7 +85,6 @@
             // panel_list
             // 
             this.panel_list.Controls.Add(this.btn_addproduct);
-            this.panel_list.Controls.Add(this.dgv_data);
             this.panel_list.Controls.Add(this.panel_add);
             this.panel_list.Controls.Add(this.grb_supplier);
             this.panel_list.Controls.Add(this.label11);
@@ -93,6 +92,7 @@
             this.panel_list.Controls.Add(this.btn_close);
             this.panel_list.Controls.Add(this.btn_add);
             this.panel_list.Controls.Add(this.btn_save);
+            this.panel_list.Controls.Add(this.dgv_data);
             this.panel_list.Location = new System.Drawing.Point(0, 0);
             this.panel_list.Name = "panel_list";
             this.panel_list.Size = new System.Drawing.Size(750, 560);
@@ -111,95 +111,7 @@
             this.btn_addproduct.TabIndex = 160;
             this.btn_addproduct.Text = "Thêm SP";
             this.btn_addproduct.UseVisualStyleBackColor = false;
-            this.btn_addproduct.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dgv_data
-            // 
-            dataGridViewCellStyle1.Format = "N0";
-            this.dgv_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_data.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stt,
-            this.name,
-            this.matax,
-            this.price,
-            this.quantity,
-            this.sumprice});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_data.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv_data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
-            this.dgv_data.Location = new System.Drawing.Point(25, 337);
-            this.dgv_data.Name = "dgv_data";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_data.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgv_data.RowHeadersVisible = false;
-            this.dgv_data.Size = new System.Drawing.Size(700, 200);
-            this.dgv_data.TabIndex = 159;
-            this.dgv_data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_data_CellClick);
-            this.dgv_data.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_data_CellValueChanged);
-            // 
-            // stt
-            // 
-            this.stt.HeaderText = "STT";
-            this.stt.Name = "stt";
-            this.stt.Width = 50;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "DisplayName";
-            this.name.HeaderText = "Tên sản phẩm";
-            this.name.Name = "name";
-            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.name.Width = 190;
-            // 
-            // matax
-            // 
-            this.matax.DataPropertyName = "unit";
-            this.matax.HeaderText = "Đơn vị tính";
-            this.matax.Name = "matax";
-            // 
-            // price
-            // 
-            this.price.DataPropertyName = "Price";
-            dataGridViewCellStyle3.Format = "N0";
-            this.price.DefaultCellStyle = dataGridViewCellStyle3;
-            this.price.HeaderText = "Giá";
-            this.price.Name = "price";
-            // 
-            // quantity
-            // 
-            this.quantity.HeaderText = "Số lượng";
-            this.quantity.Name = "quantity";
-            // 
-            // sumprice
-            // 
-            dataGridViewCellStyle4.Format = "N0";
-            this.sumprice.DefaultCellStyle = dataGridViewCellStyle4;
-            this.sumprice.HeaderText = "Giá trị đơn hàng";
-            this.sumprice.Name = "sumprice";
-            this.sumprice.Width = 130;
+            this.btn_addproduct.Click += new System.EventHandler(this.btn_addproduct_Click);
             // 
             // panel_add
             // 
@@ -480,6 +392,96 @@
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
+            // dgv_data
+            // 
+            this.dgv_data.AllowUserToResizeColumns = false;
+            this.dgv_data.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Format = "N0";
+            this.dgv_data.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_data.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_data.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.stt,
+            this.name,
+            this.matax,
+            this.price,
+            this.quantity,
+            this.sumprice});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_data.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
+            this.dgv_data.Location = new System.Drawing.Point(25, 337);
+            this.dgv_data.Name = "dgv_data";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_data.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgv_data.RowHeadersVisible = false;
+            this.dgv_data.Size = new System.Drawing.Size(700, 200);
+            this.dgv_data.TabIndex = 159;
+            this.dgv_data.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_data_CellClick);
+            this.dgv_data.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_data_CellValueChanged);
+            // 
+            // stt
+            // 
+            this.stt.HeaderText = "STT";
+            this.stt.Name = "stt";
+            this.stt.Width = 50;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "DisplayName";
+            this.name.HeaderText = "Tên sản phẩm";
+            this.name.Name = "name";
+            this.name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.name.Width = 190;
+            // 
+            // matax
+            // 
+            this.matax.DataPropertyName = "unit";
+            this.matax.HeaderText = "Đơn vị tính";
+            this.matax.Name = "matax";
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "Price";
+            dataGridViewCellStyle3.Format = "N0";
+            this.price.DefaultCellStyle = dataGridViewCellStyle3;
+            this.price.HeaderText = "Giá";
+            this.price.Name = "price";
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "Số lượng";
+            this.quantity.Name = "quantity";
+            // 
+            // sumprice
+            // 
+            dataGridViewCellStyle4.Format = "N0";
+            this.sumprice.DefaultCellStyle = dataGridViewCellStyle4;
+            this.sumprice.HeaderText = "Giá trị đơn hàng";
+            this.sumprice.Name = "sumprice";
+            this.sumprice.Width = 130;
+            // 
             // Form_InputProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,11 +496,11 @@
             this.Load += new System.EventHandler(this.Form_InputProduct_Load);
             this.panel_list.ResumeLayout(false);
             this.panel_list.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).EndInit();
             this.panel_add.ResumeLayout(false);
             this.panel_add.PerformLayout();
             this.grb_supplier.ResumeLayout(false);
             this.grb_supplier.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).EndInit();
             this.ResumeLayout(false);
 
         }

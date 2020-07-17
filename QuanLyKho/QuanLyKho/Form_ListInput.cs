@@ -17,6 +17,9 @@ namespace QuanLyKho
             InitializeComponent();
         }
         public static string IdInput;
+        public static string UserInput;
+        public static string DateInput;
+        public static string SupllierInput;
         #region function
         private Form activeForm = null;
         private void openNewForm(Form newForm)
@@ -35,7 +38,8 @@ namespace QuanLyKho
         {
             panel_show.Visible = false;
 
-            btn_delete.Visible = false;
+            //btn_delete.Visible = false;
+            btn_close.Visible = false;
             btn_show.Visible = false;
             btn_cancel.Visible = false;
 
@@ -59,10 +63,6 @@ namespace QuanLyKho
                 panel_show.Visible = false;
                 Form_ListInput_Load(sender, e);
             }
-            else
-            {
-                this.Close();
-            }
         }
 
         private void dgv_data_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -75,23 +75,27 @@ namespace QuanLyKho
 
         private void dgv_data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btn_delete.Visible = true;
+            //btn_delete.Visible = true;
             btn_show.Visible = true;
 
             string query = "select IdRole from Users where UserName = N'" + Form_Login.userlogin + "'";
             if (DataProvider.Instance.ExcuteScalar(query).ToString() == "VANCHUYEN")
             {
-                btn_delete.Visible = false;
+                //btn_delete.Visible = false;
             }
 
             int i = dgv_data.CurrentRow.Index;
-            IdInput = dgv_data.Rows[i].Cells[1].Value.ToString();       
+            IdInput = dgv_data.Rows[i].Cells[1].Value.ToString();
+            UserInput = dgv_data.Rows[i].Cells[2].Value.ToString();
+            DateInput = dgv_data.Rows[i].Cells[3].Value.ToString();
+            SupllierInput = dgv_data.Rows[i].Cells[4].Value.ToString();       
         }
 
         private void btn_show_Click(object sender, EventArgs e)
         {
             panel_show.Visible = true;
-            openNewForm(new Form_InputProduct());
+            btn_close.Visible = true;
+            openNewForm(new Form_ListInputInfor());
         }
 
         private void btn_delete_Click(object sender, EventArgs e)
