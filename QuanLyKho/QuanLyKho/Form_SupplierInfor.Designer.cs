@@ -43,7 +43,6 @@
             this.txt_note = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_close = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.txt_taxcode = new System.Windows.Forms.TextBox();
@@ -128,6 +127,7 @@
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.Size = new System.Drawing.Size(172, 26);
             this.txt_phone.TabIndex = 3;
+            this.txt_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phone_KeyPress);
             // 
             // label8
             // 
@@ -184,20 +184,6 @@
             this.label1.Size = new System.Drawing.Size(59, 19);
             this.label1.TabIndex = 35;
             this.label1.Text = "Mã Tax:";
-            // 
-            // btn_close
-            // 
-            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Location = new System.Drawing.Point(638, 30);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(75, 23);
-            this.btn_close.TabIndex = 11;
-            this.btn_close.Text = "Đóng";
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // btn_add
             // 
@@ -369,7 +355,6 @@
             this.Controls.Add(this.txt_note);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_add);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.txt_taxcode);
@@ -399,7 +384,6 @@
         private System.Windows.Forms.TextBox txt_note;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.TextBox txt_taxcode;

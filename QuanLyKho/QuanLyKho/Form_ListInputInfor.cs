@@ -20,7 +20,7 @@ namespace QuanLyKho
         private void Form_ListInputInfor_Load(object sender, EventArgs e)
         {
             dgv_data.AutoGenerateColumns = false;
-            dgv_data.Enabled = true;
+            dgv_data.Enabled = false;
             dgv_data.DataSource = DataProvider.Instance.ExcuteQuery("exec product_listinputinfor @IdInput", new object[] { Form_ListInput.IdInput });
 
             lb_idinput.Text = Form_ListInput.IdInput;

@@ -174,7 +174,7 @@ namespace QuanLyKho
                 {
                     try
                     {
-                        if (DeliveryBill_Insert(id, date, useroutput, idcustomer, idsupplier))
+                        if (DeliveryBill_Insert(id, date, idcustomer, useroutput , idsupplier))
                         {
                             int temp = 0;
                             for (int j = 0; j < dgv_data.Rows.Count - 1; j++)
@@ -216,7 +216,7 @@ namespace QuanLyKho
                             MessageBox.Show("Có lỗi xảy ra, vui lòng thử lại!", "Cảnh báo", MessageBoxButtons.OK);
                         }
                     }
-                    catch { }
+                    catch { MessageBox.Show("Có lỗi xảy ra!", "Cảnh báo", MessageBoxButtons.OK); }
                 }
                 else
                 {

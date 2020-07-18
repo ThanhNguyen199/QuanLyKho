@@ -30,10 +30,6 @@ namespace QuanLyKho
             else
                 return (false);
         }
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void Form_CustomerInfor_Load(object sender, EventArgs e)
         {
@@ -208,6 +204,14 @@ namespace QuanLyKho
             for (int i = 0; i < dgv_data.Rows.Count - 1; i++)
             {
                 dgv_data.Rows[i].Cells[0].Value = i + 1;
+            }
+        }
+
+        private void txt_phone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

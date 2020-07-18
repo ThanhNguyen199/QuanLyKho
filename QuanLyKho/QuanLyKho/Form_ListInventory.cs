@@ -26,7 +26,7 @@ namespace QuanLyKho
 
         private DataTable Product(string taxcode)
         {
-            string query = "exec product_inventoryofsupplier @Idsupplier ";
+            string query = "exec product_inforofsupplierinventory @Idsupplier ";
             return DataProvider.Instance.ExcuteQuery(query,
                 new object[] { taxcode });
         }

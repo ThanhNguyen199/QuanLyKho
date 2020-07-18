@@ -254,5 +254,13 @@ namespace QuanLyKho
                 dgv_data.Rows[i].Cells[0].Value = i + 1;
             }
         }
+
+        private void txt_price_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -363,7 +363,7 @@
             this.supplier.HeaderText = "Khách hàng";
             this.supplier.Name = "supplier";
             this.supplier.ReadOnly = true;
-            this.supplier.Width = 220;
+            this.supplier.Width = 200;
             // 
             // price
             // 
@@ -417,12 +417,12 @@
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Button btn_show;
         private System.Windows.Forms.DataGridView dgv_data;
+        private System.Windows.Forms.Panel panel_show;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.Panel panel_show;
     }
 }

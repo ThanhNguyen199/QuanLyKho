@@ -97,5 +97,13 @@ namespace QuanLyKho
                 MessageBox.Show("Thay đổi thất bại!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
+
+        private void txt_4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.dgv_data = new System.Windows.Forms.DataGridView();
             this.stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +50,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_cmnd = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_male = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_phone = new System.Windows.Forms.TextBox();
@@ -65,6 +64,10 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_choose = new System.Windows.Forms.Button();
+            this.cbb_male = new System.Windows.Forms.ComboBox();
+            this.btn_lock = new System.Windows.Forms.Button();
+            this.btn_list = new System.Windows.Forms.Button();
+            this.btn_unlock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +80,7 @@
             this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel.Location = new System.Drawing.Point(435, 286);
+            this.btn_cancel.Location = new System.Drawing.Point(283, 289);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(80, 30);
             this.btn_cancel.TabIndex = 1;
@@ -106,14 +109,14 @@
             this.sdt,
             this.email,
             this.diachi});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_data.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_data.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_data.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(34)))), ((int)(((byte)(198)))));
             this.dgv_data.Location = new System.Drawing.Point(25, 335);
             this.dgv_data.Name = "dgv_data";
@@ -206,7 +209,7 @@
             this.btn_save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(315, 286);
+            this.btn_save.Location = new System.Drawing.Point(197, 289);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(80, 30);
             this.btn_save.TabIndex = 3;
@@ -222,7 +225,7 @@
             this.btn_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(75, 286);
+            this.btn_add.Location = new System.Drawing.Point(25, 289);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(80, 30);
             this.btn_add.TabIndex = 4;
@@ -247,6 +250,7 @@
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(172, 26);
             this.txt_username.TabIndex = 7;
+            this.txt_username.TextChanged += new System.EventHandler(this.txt_username_TextChanged);
             // 
             // label3
             // 
@@ -283,6 +287,7 @@
             this.txt_cmnd.Name = "txt_cmnd";
             this.txt_cmnd.Size = new System.Drawing.Size(172, 26);
             this.txt_cmnd.TabIndex = 15;
+            this.txt_cmnd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cmnd_KeyPress);
             // 
             // label5
             // 
@@ -293,14 +298,6 @@
             this.label5.Size = new System.Drawing.Size(60, 19);
             this.label5.TabIndex = 14;
             this.label5.Text = "CMND:";
-            // 
-            // txt_male
-            // 
-            this.txt_male.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_male.Location = new System.Drawing.Point(389, 77);
-            this.txt_male.Name = "txt_male";
-            this.txt_male.Size = new System.Drawing.Size(131, 26);
-            this.txt_male.TabIndex = 17;
             // 
             // label6
             // 
@@ -329,6 +326,7 @@
             this.txt_phone.Name = "txt_phone";
             this.txt_phone.Size = new System.Drawing.Size(131, 26);
             this.txt_phone.TabIndex = 21;
+            this.txt_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_phone_KeyPress);
             // 
             // label8
             // 
@@ -384,7 +382,7 @@
             this.btn_change.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_change.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_change.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_change.Location = new System.Drawing.Point(195, 286);
+            this.btn_change.Location = new System.Drawing.Point(111, 289);
             this.btn_change.Name = "btn_change";
             this.btn_change.Size = new System.Drawing.Size(80, 30);
             this.btn_change.TabIndex = 26;
@@ -394,6 +392,7 @@
             // 
             // cbb_quyen
             // 
+            this.cbb_quyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbb_quyen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_quyen.FormattingEnabled = true;
             this.cbb_quyen.Location = new System.Drawing.Point(128, 117);
@@ -422,7 +421,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(548, 77);
+            this.pictureBox1.Location = new System.Drawing.Point(549, 68);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(150, 200);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -437,7 +436,7 @@
             this.btn_choose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_choose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_choose.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_choose.Location = new System.Drawing.Point(551, 286);
+            this.btn_choose.Location = new System.Drawing.Point(369, 289);
             this.btn_choose.Name = "btn_choose";
             this.btn_choose.Size = new System.Drawing.Size(80, 30);
             this.btn_choose.TabIndex = 123;
@@ -445,12 +444,77 @@
             this.btn_choose.UseVisualStyleBackColor = false;
             this.btn_choose.Click += new System.EventHandler(this.btn_choose_Click);
             // 
+            // cbb_male
+            // 
+            this.cbb_male.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_male.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_male.FormattingEnabled = true;
+            this.cbb_male.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbb_male.Location = new System.Drawing.Point(389, 77);
+            this.cbb_male.Name = "cbb_male";
+            this.cbb_male.Size = new System.Drawing.Size(126, 27);
+            this.cbb_male.TabIndex = 124;
+            // 
+            // btn_lock
+            // 
+            this.btn_lock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_lock.BackColor = System.Drawing.Color.Transparent;
+            this.btn_lock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_lock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_lock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_lock.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lock.Location = new System.Drawing.Point(553, 289);
+            this.btn_lock.Name = "btn_lock";
+            this.btn_lock.Size = new System.Drawing.Size(80, 30);
+            this.btn_lock.TabIndex = 125;
+            this.btn_lock.Text = "Xoá NV";
+            this.btn_lock.UseVisualStyleBackColor = false;
+            this.btn_lock.Click += new System.EventHandler(this.btn_lock_Click);
+            // 
+            // btn_list
+            // 
+            this.btn_list.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_list.BackColor = System.Drawing.Color.Transparent;
+            this.btn_list.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_list.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_list.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_list.Location = new System.Drawing.Point(462, 289);
+            this.btn_list.Name = "btn_list";
+            this.btn_list.Size = new System.Drawing.Size(85, 30);
+            this.btn_list.TabIndex = 126;
+            this.btn_list.Text = "Danh sách";
+            this.btn_list.UseVisualStyleBackColor = false;
+            this.btn_list.Click += new System.EventHandler(this.btn_list_Click);
+            // 
+            // btn_unlock
+            // 
+            this.btn_unlock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_unlock.BackColor = System.Drawing.Color.Transparent;
+            this.btn_unlock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_unlock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_unlock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_unlock.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_unlock.Location = new System.Drawing.Point(639, 289);
+            this.btn_unlock.Name = "btn_unlock";
+            this.btn_unlock.Size = new System.Drawing.Size(86, 30);
+            this.btn_unlock.TabIndex = 127;
+            this.btn_unlock.Text = "Khôi phục";
+            this.btn_unlock.UseVisualStyleBackColor = false;
+            this.btn_unlock.Click += new System.EventHandler(this.btn_unlock_Click);
+            // 
             // Form_UserManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(750, 560);
+            this.Controls.Add(this.btn_unlock);
+            this.Controls.Add(this.btn_list);
+            this.Controls.Add(this.btn_lock);
+            this.Controls.Add(this.cbb_male);
             this.Controls.Add(this.btn_choose);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dateTimePicker1);
@@ -464,7 +528,6 @@
             this.Controls.Add(this.txt_phone);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txt_male);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_cmnd);
             this.Controls.Add(this.label5);
@@ -501,7 +564,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_cmnd;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_male;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_phone;
@@ -526,5 +588,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn diachi;
+        private System.Windows.Forms.ComboBox cbb_male;
+        private System.Windows.Forms.Button btn_lock;
+        private System.Windows.Forms.Button btn_list;
+        private System.Windows.Forms.Button btn_unlock;
     }
 }

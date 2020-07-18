@@ -22,7 +22,7 @@ namespace QuanLyKho
         public Form_ReportInput(string id, string link)
         {
             InitializeComponent();
-            GetFileInvoice(id, link);
+            GetFileInvoice(id, link);            
         }
 
         private void Form_ReportInput_Load(object sender, EventArgs e)
@@ -31,12 +31,11 @@ namespace QuanLyKho
         }
         private void Loaddata()
         {
+            this.reportViewer1.RefreshReport();
             // TODO: This line of code loads data into the 'Database1DataSet.Enterprise' table.You can move, or remove it, as needed.
             this.EnterpriseTableAdapter.Fill(this.Database1DataSet.Enterprise);
             // TODO: This line of code loads data into the 'Database1DataSet.inputinfor_infor' table. You can move, or remove it, as needed.
-            this.inputinfor_inforTableAdapter.Fill(this.Database1DataSet.inputinfor_infor, Form_ListInput.IdInput);
-
-            this.reportViewer1.RefreshReport();
+            this.inputinfor_inforTableAdapter.Fill(this.Database1DataSet.inputinfor_infor, Form_ListInput.IdInput);                        
         }
         public void GetFileInvoice(string id, string link)
         {
@@ -45,6 +44,7 @@ namespace QuanLyKho
             this.EnterpriseTableAdapter.Fill(this.Database1DataSet.Enterprise);
             // TODO: This line of code loads data into the 'Database1DataSet.inputinfor_infor' table. You can move, or remove it, as needed.
             this.inputinfor_inforTableAdapter.Fill(this.Database1DataSet.inputinfor_infor, id);
+            
 
             byte[] temp = reportViewer1.LocalReport.Render("PDF");
             var fullpath = Path.Combine(link, id.ToString() + ".pdf");

@@ -31,16 +31,32 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.Database2 = new QuanLyKho.Database2();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ReportOutput));
             this.EnterpriseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.EnterpriseTableAdapter = new QuanLyKho.Database2TableAdapters.EnterpriseTableAdapter();
+            this.Database2 = new QuanLyKho.Database2();
             this.deliverybillinfor_inforBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.EnterpriseTableAdapter = new QuanLyKho.Database2TableAdapters.EnterpriseTableAdapter();
             this.deliverybillinfor_inforTableAdapter = new QuanLyKho.Database2TableAdapters.deliverybillinfor_inforTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.Database2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EnterpriseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Database2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliverybillinfor_inforBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // EnterpriseBindingSource
+            // 
+            this.EnterpriseBindingSource.DataMember = "Enterprise";
+            this.EnterpriseBindingSource.DataSource = this.Database2;
+            // 
+            // Database2
+            // 
+            this.Database2.DataSetName = "Database2";
+            this.Database2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // deliverybillinfor_inforBindingSource
+            // 
+            this.deliverybillinfor_inforBindingSource.DataMember = "deliverybillinfor_infor";
+            this.deliverybillinfor_inforBindingSource.DataSource = this.Database2;
             // 
             // reportViewer1
             // 
@@ -58,24 +74,9 @@
             this.reportViewer1.Size = new System.Drawing.Size(704, 521);
             this.reportViewer1.TabIndex = 0;
             // 
-            // Database2
-            // 
-            this.Database2.DataSetName = "Database2";
-            this.Database2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // EnterpriseBindingSource
-            // 
-            this.EnterpriseBindingSource.DataMember = "Enterprise";
-            this.EnterpriseBindingSource.DataSource = this.Database2;
-            // 
             // EnterpriseTableAdapter
             // 
             this.EnterpriseTableAdapter.ClearBeforeFill = true;
-            // 
-            // deliverybillinfor_inforBindingSource
-            // 
-            this.deliverybillinfor_inforBindingSource.DataMember = "deliverybillinfor_infor";
-            this.deliverybillinfor_inforBindingSource.DataSource = this.Database2;
             // 
             // deliverybillinfor_inforTableAdapter
             // 
@@ -88,12 +89,13 @@
             this.ClientSize = new System.Drawing.Size(704, 521);
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_ReportOutput";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_ReportOutput";
             this.Load += new System.EventHandler(this.Form_ReportOutput_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Database2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EnterpriseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Database2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.deliverybillinfor_inforBindingSource)).EndInit();
             this.ResumeLayout(false);
 

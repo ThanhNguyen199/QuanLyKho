@@ -72,11 +72,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(128, 96);
+            this.label1.Location = new System.Drawing.Point(116, 94);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 21);
+            this.label1.Size = new System.Drawing.Size(97, 21);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Tax Code:";
+            this.label1.Text = "Mã số thuế:";
             // 
             // txt_1
             // 
@@ -177,6 +177,7 @@
             this.txt_4.Size = new System.Drawing.Size(379, 33);
             this.txt_4.TabIndex = 8;
             this.txt_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_4_KeyPress);
             // 
             // label4
             // 

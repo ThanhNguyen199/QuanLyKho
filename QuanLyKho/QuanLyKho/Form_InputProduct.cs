@@ -129,6 +129,7 @@ namespace QuanLyKho
             btn_addproduct.Visible = false;
             btn_close.Visible = false;
             btn_add.Visible = true;
+            btn_add.Enabled = true;
             dgv_data.Enabled = false;
 
             lb_supplier.Text = "";
@@ -166,7 +167,7 @@ namespace QuanLyKho
         #endregion
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (dgv_data.Rows.Count > 1 && cbb_taxcode.Text != "")
+            if (dgv_data.Rows.Count > 1 && cbb_taxcode.Text != "" && cbb_user.Text != "")
             {
                 string id = lb_IdInput.Text;
                 DateTime date = dateTimePicker1.Value;

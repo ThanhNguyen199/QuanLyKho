@@ -150,7 +150,7 @@
             // 
             this.lb_user.AutoSize = true;
             this.lb_user.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_user.Location = new System.Drawing.Point(248, 143);
+            this.lb_user.Location = new System.Drawing.Point(224, 143);
             this.lb_user.Name = "lb_user";
             this.lb_user.Size = new System.Drawing.Size(70, 19);
             this.lb_user.TabIndex = 167;
@@ -160,7 +160,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(112, 143);
+            this.label9.Location = new System.Drawing.Point(88, 143);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(73, 19);
             this.label9.TabIndex = 165;
@@ -180,7 +180,7 @@
             // 
             this.lb_supplier.AutoSize = true;
             this.lb_supplier.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_supplier.Location = new System.Drawing.Point(248, 81);
+            this.lb_supplier.Location = new System.Drawing.Point(224, 81);
             this.lb_supplier.Name = "lb_supplier";
             this.lb_supplier.Size = new System.Drawing.Size(115, 19);
             this.lb_supplier.TabIndex = 163;
@@ -190,7 +190,7 @@
             // 
             this.lb_date.AutoSize = true;
             this.lb_date.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_date.Location = new System.Drawing.Point(248, 112);
+            this.lb_date.Location = new System.Drawing.Point(224, 112);
             this.lb_date.Name = "lb_date";
             this.lb_date.Size = new System.Drawing.Size(64, 19);
             this.lb_date.TabIndex = 164;
@@ -200,7 +200,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(112, 81);
+            this.label4.Location = new System.Drawing.Point(88, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 19);
             this.label4.TabIndex = 161;
@@ -210,7 +210,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(112, 112);
+            this.label5.Location = new System.Drawing.Point(88, 112);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 19);
             this.label5.TabIndex = 162;
@@ -230,7 +230,7 @@
             // 
             this.lb_idinput.AutoSize = true;
             this.lb_idinput.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_idinput.Location = new System.Drawing.Point(248, 50);
+            this.lb_idinput.Location = new System.Drawing.Point(224, 50);
             this.lb_idinput.Name = "lb_idinput";
             this.lb_idinput.Size = new System.Drawing.Size(115, 19);
             this.lb_idinput.TabIndex = 170;
@@ -240,7 +240,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(112, 50);
+            this.label2.Location = new System.Drawing.Point(88, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 19);
             this.label2.TabIndex = 169;

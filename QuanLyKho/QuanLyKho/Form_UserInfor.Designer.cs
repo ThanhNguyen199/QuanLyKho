@@ -35,7 +35,6 @@
             this.txt8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txt6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.btn_changepass = new System.Windows.Forms.Button();
             this.lb_1 = new System.Windows.Forms.Label();
             this.lb_2 = new System.Windows.Forms.Label();
+            this.txt6 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel_change.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -101,6 +101,7 @@
             this.txt8.Name = "txt8";
             this.txt8.Size = new System.Drawing.Size(119, 26);
             this.txt8.TabIndex = 42;
+            this.txt8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt8_KeyPress);
             // 
             // label8
             // 
@@ -118,19 +119,11 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(214, 264);
+            this.label7.Location = new System.Drawing.Point(221, 264);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 19);
             this.label7.TabIndex = 39;
             this.label7.Text = "Ngày sinh:";
-            // 
-            // txt6
-            // 
-            this.txt6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt6.Location = new System.Drawing.Point(158, 261);
-            this.txt6.Name = "txt6";
-            this.txt6.Size = new System.Drawing.Size(52, 26);
-            this.txt6.TabIndex = 38;
             // 
             // label6
             // 
@@ -149,6 +142,7 @@
             this.txt5.Name = "txt5";
             this.txt5.Size = new System.Drawing.Size(119, 26);
             this.txt5.TabIndex = 36;
+            this.txt5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt5_KeyPress);
             // 
             // label5
             // 
@@ -275,7 +269,7 @@
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(292, 263);
+            this.dateTimePicker1.Location = new System.Drawing.Point(299, 263);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(83, 20);
             this.dateTimePicker1.TabIndex = 52;
@@ -314,11 +308,25 @@
             this.lb_2.TabIndex = 56;
             this.lb_2.Text = "Quyền hạn";
             // 
+            // txt6
+            // 
+            this.txt6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txt6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt6.FormattingEnabled = true;
+            this.txt6.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.txt6.Location = new System.Drawing.Point(158, 261);
+            this.txt6.Name = "txt6";
+            this.txt6.Size = new System.Drawing.Size(57, 27);
+            this.txt6.TabIndex = 125;
+            // 
             // Form_UserInfor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 560);
+            this.Controls.Add(this.txt6);
             this.Controls.Add(this.lb_2);
             this.Controls.Add(this.lb_1);
             this.Controls.Add(this.btn_changepass);
@@ -333,7 +341,6 @@
             this.Controls.Add(this.txt8);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txt6);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt5);
             this.Controls.Add(this.label5);
@@ -363,7 +370,6 @@
         private System.Windows.Forms.TextBox txt8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txt6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt5;
         private System.Windows.Forms.Label label5;
@@ -381,5 +387,6 @@
         private System.Windows.Forms.Button btn_changepass;
         private System.Windows.Forms.Label lb_1;
         private System.Windows.Forms.Label lb_2;
+        private System.Windows.Forms.ComboBox txt6;
     }
 }

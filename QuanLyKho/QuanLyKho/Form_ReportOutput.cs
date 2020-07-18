@@ -37,7 +37,12 @@ namespace QuanLyKho
 
         private void Form_ReportOutput_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'DataSet2.Enterprise' table. You can move, or remove it, as needed.
+            this.EnterpriseTableAdapter.Fill(this.Database2.Enterprise);
+            // TODO: This line of code loads data into the 'DataSet2.deliverybillinfor_infor' table. You can move, or remove it, as needed.
+            this.deliverybillinfor_inforTableAdapter.Fill(this.Database2.deliverybillinfor_infor, Form_ListOutput.IdOutput);
 
+            this.reportViewer1.RefreshReport();
         }
         public void GetFileInvoice(string id, string link)
         {

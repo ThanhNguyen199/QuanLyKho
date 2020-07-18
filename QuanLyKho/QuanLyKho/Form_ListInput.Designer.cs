@@ -179,7 +179,6 @@
             this.Id.HeaderText = "Mã phiếu nhập";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 110;
             // 
             // username
             // 
@@ -415,12 +414,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_idinput;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn username;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.Button btn_cancel;
     }
 }
