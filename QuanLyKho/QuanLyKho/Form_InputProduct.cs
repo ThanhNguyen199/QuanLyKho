@@ -105,12 +105,12 @@ namespace QuanLyKho
 
         private void Form_InputProduct_Load(object sender, EventArgs e)
         {
-            cbb_taxcode.DataSource = DataProvider.Instance.ExcuteQuery("select * from Supplier");
+            cbb_taxcode.DataSource = DataProvider.Instance.ExcuteQuery("select * from Supplier where Status = 1");
             cbb_taxcode.DisplayMember = "TaxCode";
             cbb_taxcode.ValueMember = "TaxCode";
             cbb_taxcode.Text = "";
 
-            cbb_user.DataSource = DataProvider.Instance.ExcuteQuery("select * from Users");
+            cbb_user.DataSource = DataProvider.Instance.ExcuteQuery("select * from Users where Status = 1");
             cbb_user.DisplayMember = "DisplayName";
             cbb_user.ValueMember = "UserName";
             cbb_user.Text = "";

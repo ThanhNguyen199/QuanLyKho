@@ -18,7 +18,7 @@ namespace QuanLyKho
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form_Login());
             //Application.Run(new Form_InputProduct());
-            //Application.Run(new Form_ListInventory());
+            //Application.Run(new Form_ListOutput());
             //Application.Run(new Form_DeliveryBillProduct());
         }
     }

@@ -37,9 +37,13 @@ namespace QuanLyKho
             btn_change.Visible = false;
             btn_save.Visible = false;
             btn_cancel.Visible = false;
+            btn_list.Visible = true;
+            btn_lock.Visible = false;
+            btn_unlock.Visible = false;
 
             btn_add.Enabled = true;
             btn_change.Enabled = true;
+            btn_list.Enabled = true;
 
             txt_taxcode.Text = "";
             txt_name.Text = "";
@@ -62,19 +66,30 @@ namespace QuanLyKho
                 btn_change.Visible = false;
                 btn_save.Visible = false;
                 btn_cancel.Visible = false;
+                btn_list.Visible = false;
+                btn_lock.Visible = false;
+                btn_unlock.Visible = false;
             }           
 
             dgv_data.AutoGenerateColumns = false;
             dgv_data.Enabled = true;
             dgv_data.DataSource = DataProvider.Instance.ExcuteQuery("exec supplier_listinfor", new object[] { });
         }
-
+        int i;
         private void dgv_data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btn_add.Visible = true;
-            btn_change.Visible = true; 
+            if(btn_list.Enabled == true)
+            {
+                btn_add.Visible = true;
+                btn_change.Visible = true;
+                btn_lock.Visible = true;
+            }
+            else
+            {
+                btn_unlock.Visible = true;
+            }
 
-            int i = dgv_data.CurrentRow.Index;
+             i = dgv_data.CurrentRow.Index;
             txt_taxcode.Text = dgv_data.Rows[i].Cells[1].Value.ToString();
             txt_name.Text = dgv_data.Rows[i].Cells[2].Value.ToString();
             txt_phone.Text = dgv_data.Rows[i].Cells[3].Value.ToString();
@@ -205,6 +220,38 @@ namespace QuanLyKho
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void btn_list_Click(object sender, EventArgs e)
+        {
+            i = 0;
+            btn_add.Visible = false;
+            btn_change.Visible = false;
+            btn_save.Visible = false;
+            btn_cancel.Visible = true;
+            btn_list.Visible = true;
+            btn_list.Enabled = false;
+            btn_lock.Visible = false;
+            btn_unlock.Visible = true;
+            dgv_data.DataSource = DataProvider.Instance.ExcuteQuery("exec supplier_listinforlock", new object[] { });
+        }
+
+        private void btn_lock_Click(object sender, EventArgs e)
+        {
+            if (DataProvider.Instance.ExcuteNunQuery("exec supplier_lock @Taxcode", new object[] { dgv_data.Rows[i].Cells[1].Value.ToString() }) > 0)
+            {
+                MessageBox.Show("Xoá thành công!", "Thông báo");
+                Form_SupplierInfor_Load(sender, e);
+            }
+        }
+
+        private void btn_unlock_Click(object sender, EventArgs e)
+        {
+            if (DataProvider.Instance.ExcuteNunQuery("exec supplier_unlock @Taxcode", new object[] { dgv_data.Rows[i].Cells[1].Value.ToString() }) > 0)
+            {
+                MessageBox.Show("Khôi phục thành công!", "Thông báo");
+                dgv_data.DataSource = DataProvider.Instance.ExcuteQuery("exec supplier_listinforlock", new object[] { });
             }
         }
     }

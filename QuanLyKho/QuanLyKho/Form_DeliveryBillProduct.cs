@@ -96,17 +96,17 @@ namespace QuanLyKho
             btn_cancel.Visible = false;
             dgv_data.Enabled = false;
 
-            cbb_taxcode.DataSource = DataProvider.Instance.ExcuteQuery("select * from Supplier");
+            cbb_taxcode.DataSource = DataProvider.Instance.ExcuteQuery("select * from Supplier where status = 1");
             cbb_taxcode.DisplayMember = "TaxCode";
             cbb_taxcode.ValueMember = "TaxCode";
             cbb_taxcode.Text = "";
 
-            cbb_cusId.DataSource = DataProvider.Instance.ExcuteQuery("select * from Customer");
+            cbb_cusId.DataSource = DataProvider.Instance.ExcuteQuery("select * from Customer where status = 1");
             cbb_cusId.DisplayMember = "Id";
             cbb_cusId.ValueMember = "Id";
             cbb_cusId.Text = "";
 
-            cbb_user.DataSource = DataProvider.Instance.ExcuteQuery("select * from Users");
+            cbb_user.DataSource = DataProvider.Instance.ExcuteQuery("select * from Users where status = 1");
             cbb_user.DisplayMember = "DisplayName";
             cbb_user.ValueMember = "UserName";
             cbb_user.Text = "";

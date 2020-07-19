@@ -50,6 +50,18 @@ namespace QuanLyKho
             txt_address.Enabled = false;
             txt_note.Enabled = false;
 
+            btn_add.Visible = true;
+            btn_change.Visible = false;
+            btn_save.Visible = false;
+            btn_cancel.Visible = false;
+            btn_list.Visible = true;
+            btn_lock.Visible = false;
+            btn_unlock.Visible = false;
+
+            btn_add.Enabled = true;
+            btn_change.Enabled = true;
+            btn_list.Enabled = true;
+
             string query = "select IdRole from Users where UserName = N'" + Form_Login.userlogin + "'";
             if (DataProvider.Instance.ExcuteScalar(query).ToString() == "VANCHUYEN")
             {
@@ -57,12 +69,10 @@ namespace QuanLyKho
                 btn_change.Visible = false;
                 btn_save.Visible = false;
                 btn_cancel.Visible = false;
-            }
-
-            btn_add.Enabled = true;
-            btn_change.Enabled = false;
-            btn_save.Enabled = false;
-            btn_cancel.Enabled = false;
+                btn_list.Visible = false;
+                btn_lock.Visible = false;
+                btn_unlock.Visible = false;
+            }            
 
             dgv_data.AutoGenerateColumns = false;
             dgv_data.Enabled = true;
@@ -79,6 +89,7 @@ namespace QuanLyKho
             txt_email.Text = "";
             txt_address.Text = "";
             txt_note.Text = "";
+            i = 0;
             
             txt_buyer.Enabled = true;
             txt_taxcode.Enabled = true;
@@ -183,12 +194,43 @@ namespace QuanLyKho
         {
             Form_CustomerInfor_Load(sender, e);
         }
-
+        int i;
         private void dgv_data_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btn_change.Enabled = true;
+            if(btn_list.Enabled == true)
+            {
+                btn_add.Visible = true;
+                btn_change.Visible = true;
+                btn_save.Visible = false;
+                btn_cancel.Visible = true;
+                btn_list.Visible = true;
+                btn_lock.Visible = true;
+                btn_unlock.Visible = false;
+            }
+            else
+            {
+                btn_add.Visible = false;
+                btn_change.Visible = false;
+                btn_save.Visible = false;
+                btn_cancel.Visible = true;
+                btn_list.Visible = true;
+                btn_lock.Visible = false;
+                btn_unlock.Visible = true;
+            }
 
-            int i = dgv_data.CurrentRow.Index;
+            string query = "select IdRole from Users where UserName = N'" + Form_Login.userlogin + "'";
+            if (DataProvider.Instance.ExcuteScalar(query).ToString() == "VANCHUYEN")
+            {
+                btn_add.Visible = false;
+                btn_change.Visible = false;
+                btn_save.Visible = false;
+                btn_cancel.Visible = false;
+                btn_list.Visible = false;
+                btn_lock.Visible = false;
+                btn_unlock.Visible = false;
+            }
+
+            i = dgv_data.CurrentRow.Index;
             lb_id.Text = dgv_data.Rows[i].Cells[1].Value.ToString();
             txt_taxcode.Text = dgv_data.Rows[i].Cells[2].Value.ToString();
             txt_buyer.Text = dgv_data.Rows[i].Cells[3].Value.ToString();
@@ -212,6 +254,38 @@ namespace QuanLyKho
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void btn_list_Click(object sender, EventArgs e)
+        {
+            i = 0;
+            btn_add.Visible = false;
+            btn_change.Visible = false;
+            btn_save.Visible = false;
+            btn_cancel.Visible = true;
+            btn_list.Visible = true;
+            btn_list.Enabled = false;
+            btn_lock.Visible = false;
+            btn_unlock.Visible = true;
+            dgv_data.DataSource = DataProvider.Instance.ExcuteQuery("exec customer_listinforlock", new object[] { });
+        }
+
+        private void btn_lock_Click(object sender, EventArgs e)
+        {
+            if (DataProvider.Instance.ExcuteNunQuery("exec customer_lock @Taxcode", new object[] { dgv_data.Rows[i].Cells[1].Value.ToString() }) > 0)
+            {
+                MessageBox.Show("Xoá thành công!", "Thông báo");
+                Form_CustomerInfor_Load(sender, e);
+            }
+        }
+
+        private void btn_unlock_Click(object sender, EventArgs e)
+        {
+            if (DataProvider.Instance.ExcuteNunQuery("exec customer_unlock @Taxcode", new object[] { dgv_data.Rows[i].Cells[1].Value.ToString() }) > 0)
+            {
+                MessageBox.Show("Khôi phục thành công!", "Thông báo");
+                dgv_data.DataSource = DataProvider.Instance.ExcuteQuery("exec customer_listinforlock", new object[] { });
             }
         }
     }

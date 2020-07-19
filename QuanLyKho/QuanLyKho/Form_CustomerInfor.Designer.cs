@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_taxcode = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -60,6 +60,9 @@
             this.txt_buyer = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lb_id = new System.Windows.Forms.Label();
+            this.btn_unlock = new System.Windows.Forms.Button();
+            this.btn_list = new System.Windows.Forms.Button();
+            this.btn_lock = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,7 +102,7 @@
             this.btn_change.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_change.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_change.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_change.Location = new System.Drawing.Point(285, 288);
+            this.btn_change.Location = new System.Drawing.Point(148, 290);
             this.btn_change.Name = "btn_change";
             this.btn_change.Size = new System.Drawing.Size(80, 30);
             this.btn_change.TabIndex = 84;
@@ -216,7 +219,7 @@
             this.btn_add.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(165, 288);
+            this.btn_add.Location = new System.Drawing.Point(62, 290);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(80, 30);
             this.btn_add.TabIndex = 83;
@@ -232,7 +235,7 @@
             this.btn_save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.Location = new System.Drawing.Point(405, 288);
+            this.btn_save.Location = new System.Drawing.Point(234, 290);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(80, 30);
             this.btn_save.TabIndex = 85;
@@ -260,14 +263,14 @@
             this.email,
             this.diachi,
             this.note});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_data.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_data.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_data.Location = new System.Drawing.Point(24, 337);
             this.dgv_data.Name = "dgv_data";
             this.dgv_data.ReadOnly = true;
@@ -351,7 +354,7 @@
             this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancel.Location = new System.Drawing.Point(525, 288);
+            this.btn_cancel.Location = new System.Drawing.Point(320, 290);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(80, 30);
             this.btn_cancel.TabIndex = 86;
@@ -387,12 +390,63 @@
             this.lb_id.TabIndex = 98;
             this.lb_id.Text = "ID";
             // 
+            // btn_unlock
+            // 
+            this.btn_unlock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_unlock.BackColor = System.Drawing.Color.Transparent;
+            this.btn_unlock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_unlock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_unlock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_unlock.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_unlock.Location = new System.Drawing.Point(607, 290);
+            this.btn_unlock.Name = "btn_unlock";
+            this.btn_unlock.Size = new System.Drawing.Size(86, 30);
+            this.btn_unlock.TabIndex = 133;
+            this.btn_unlock.Text = "Khôi phục";
+            this.btn_unlock.UseVisualStyleBackColor = false;
+            this.btn_unlock.Click += new System.EventHandler(this.btn_unlock_Click);
+            // 
+            // btn_list
+            // 
+            this.btn_list.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_list.BackColor = System.Drawing.Color.Transparent;
+            this.btn_list.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_list.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_list.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_list.Location = new System.Drawing.Point(423, 290);
+            this.btn_list.Name = "btn_list";
+            this.btn_list.Size = new System.Drawing.Size(86, 30);
+            this.btn_list.TabIndex = 132;
+            this.btn_list.Text = "DS đã xóa";
+            this.btn_list.UseVisualStyleBackColor = false;
+            this.btn_list.Click += new System.EventHandler(this.btn_list_Click);
+            // 
+            // btn_lock
+            // 
+            this.btn_lock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_lock.BackColor = System.Drawing.Color.Transparent;
+            this.btn_lock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_lock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(107)))), ((int)(((byte)(217)))));
+            this.btn_lock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_lock.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_lock.Location = new System.Drawing.Point(515, 290);
+            this.btn_lock.Name = "btn_lock";
+            this.btn_lock.Size = new System.Drawing.Size(86, 30);
+            this.btn_lock.TabIndex = 131;
+            this.btn_lock.Text = "Xoá";
+            this.btn_lock.UseVisualStyleBackColor = false;
+            this.btn_lock.Click += new System.EventHandler(this.btn_lock_Click);
+            // 
             // Form_CustomerInfor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(750, 560);
+            this.Controls.Add(this.btn_unlock);
+            this.Controls.Add(this.btn_list);
+            this.Controls.Add(this.btn_lock);
             this.Controls.Add(this.lb_id);
             this.Controls.Add(this.txt_buyer);
             this.Controls.Add(this.label3);
@@ -460,5 +514,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn diachi;
         private System.Windows.Forms.DataGridViewTextBoxColumn note;
+        private System.Windows.Forms.Button btn_unlock;
+        private System.Windows.Forms.Button btn_list;
+        private System.Windows.Forms.Button btn_lock;
     }
 }
